@@ -14,8 +14,9 @@
     <li class="nav-item dropdown">
         <a class="nav-link" href="{{ route('logout') }}"
            onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
-                         <i class="fas fa-sign-out-alt"></i>
+           if (confirm('¿Estas seguro que quieres cerrar sesión?')){
+              document.getElementById('logout-form').submit();}">
+          <i class="fas fa-sign-out-alt"></i>
         </a>
     </li>
 
