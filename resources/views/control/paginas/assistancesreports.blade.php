@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header" style="background-color: #a90018">
+                        <div class="card-header" style="background-color: #d5ffab">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="titulo">Reporte de Asistencias</div>
