@@ -55,14 +55,6 @@ class UserController extends Controller
                 ->make(true);
         }
     }
-    /* public function obtener_empresa_id(){
-        $empresas = empresa::all();
-        $select_empresa= "<option >Seleccionar...</option>";
-        foreach($business as $empresa){
-            $select_empresa = $select_empresa."<option value='".$business->empresa."'>".$business->empresa."</option>";
-        }
-        return response()->json($select_empresa);
-    } */
     public function obtener_roles(){
         $roles = Role::all();
         $select_roles= "<option >Seleccionar...</option>";
@@ -97,20 +89,8 @@ class UserController extends Controller
         }
             $user = new User;
             $user->name=$request->nombre;
-            $user->lastname_p=$request->paterno;
-            $user->lastname_m=$request->materno;
             $user->email=$request->email;
             $user->password=Hash::make($request->pass);
-            $user->nss=$request->nss;
-            $user->tel=$request->tel;
-            $user->curp=$request->curp;
-            $user->rfc=$request->rfc;
-            $user->empresa_id=$request->empresa_id;
-            $user->puesto=$request->puesto;
-            $user->ingreso=$request->ingreso;
-            $user->horariolv_id=$request->horariolv_id;
-            $user->horariosab_id=$request->horariosab_id;
-            $user->diasvacaciones=$request->diasvacaciones;
             $user->rol=$request->rol;
             $user->foto=$request->foto;
             if ($request->hasFile('foto')){
@@ -125,9 +105,6 @@ class UserController extends Controller
             $user->save();
 
             $user->assignRole($request->rol);
-/*             $user->assignRole($request->empresa_id); */
-            $user->assignempresa_id =$request->empresa_id;
-
 
         }
         return response()->json($user);
@@ -136,12 +113,7 @@ class UserController extends Controller
     public function listar_user (Request $request)
     {
         if($request->ajax()){
-            //$data = User::select('id','name','lastname_p','lastname_m','email','nss','tel','curp','rfc','empresa_id','puesto','ingreso','horariolv_id','horariosab_id','diasvacaciones','rol','foto','status');
-            $data = DB::table('users as u')
-            ->leftjoin('business as b', 'u.empresa_id', '=', 'b.id')                                     
-            ->select('u.id', 'u.name', 'u.lastname_p', 'u.lastname_m', 'u.email', 'u.nss', 'u.tel', 'u.curp', 'u.rfc', 'b.empresa AS empresa_id', 'u.puesto', 'u.ingreso', 'u.horariolv_id', 'u.horariosab_id', 'u.diasvacaciones', 'u.rol', 'u.foto', 'u.status')
-            ->orderBy('id','DESC')
-            ->get();
+            $data = User::select('id','name','email','rol','foto','status');
             return DataTables::of($data)
             ->addColumn('foto', function ($data) {
                 $url= asset($data->foto);
@@ -152,7 +124,6 @@ class UserController extends Controller
                                     '<div class="row">'.
                                             '<div class="col"><a href="javascript:void(0);" onclick="obteneruser('.$data->id.')"><i class="fas fa-pen-square" aria-hidden="true"></i></a></div>'.
                                             '<div class="col"><a href="javascript:void(0);" onclick="verificarbajauser('.$data->id.')"><i class="fa fa-minus-square" aria-hidden="true"></i></a></div>'.
-                                            '<div class="col"><a class="paddingmenuopciones" href="'.route('credencial_pdf',$data->id).'" target="_blank"><i class="fa fa-address-card" aria-hidden="true"></i></a></div>'.
                                         '</div>'.
                                 '</div>';
                 return $operaciones;
@@ -193,8 +164,6 @@ class UserController extends Controller
         ->update([
             //atributo de la Base => $request-> nombre de la caja de texto
             'name'=> $request->nombre,
-            'lastname_p' => $request->paterno,
-            'lastname_m' => $request->materno,
             'tel' => $request->tel,
             'curp' => $request->curp,
             'rfc' => $request->rfc,
@@ -218,18 +187,6 @@ class UserController extends Controller
             'status'=> 'BAJA'
         ]);
         return response()->json($user);
-    }
-    public function credencial_pdf($user_id){
-        //dd($user_id);
-        $customPaper = array(0,0,325.00,394.00);
-
-        $user = User::find($user_id);
-        $pdf = PDF::loadView('control.paginas.credencial', compact('user'))
-        ->setPaper($customPaper);
-        //->setOption('margin-left', 2)
-        //->setOption('margin-right', 2)
-        //->setOption('margin-bottom', 10);
-        return $pdf->stream();
     }
 
 }

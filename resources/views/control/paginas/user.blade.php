@@ -52,22 +52,10 @@
                                         <th>#</th>
                                         <th>Foto</th>
                                         <th>Nombre(s)</th>
-                                        <th>A. Paterno</th>
-                                        <th>A. Materno</th>
                                         <th>Email</th>
-                                        <th>NSS</th>
-                                        <th>Tel</th>
-                                        <th>CURP</th>
-                                        <th>R.F.C.</th>
-                                        <th>Empresa</th>
-                                        <th>Puesto</th>
-                                        <th>Fecha de ingreso</th>
-                                        <th>Horario L-V</th>
-                                        <th>Horario Sabado</th>
-                                        <th>Dias Vacaciones</th>
                                         <th>Rol</th>
                                         <th>Estatus</th>
-                         </tr>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>

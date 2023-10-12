@@ -21,27 +21,12 @@ class User extends Authenticatable
     protected $fillable = [
         /*'name', 'email', 'password',*/
         'name',
-        'lastname_p',
-        'lastname_m',
         'email',
         'password',
-        'nss',
-        'tel',
-        'curp',
-        'rfc',
-        'empresa_id',
-        'puesto',
-        'ingreso',
-        'horariolv_id',
-        'horariosab_id',
-        'diasvacaciones',
         'rol',
         'foto',
         'status'
     ];
-    public function empresa_id(){
-        return $this->belongsTo('App\C_business');
-    }
 
     /**
      * The attributes that should be hidden for arrays.

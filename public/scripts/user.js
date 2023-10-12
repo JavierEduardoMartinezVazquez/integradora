@@ -235,14 +235,6 @@
                                         '<label>Nombre(s):<b style="color:#F44336 !important;">*</b></label>'+
                                         '<input type="text" class="form-control" name="nombre" id="txtnombre" placeholder="Nombre" onkeyup="tipoLetra(this);" required>'+
                                     '</div>'+
-                                    '<div class="col-md-4">'+
-                                        '<label>A. Paterno<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="text" class="form-control" name="paterno" id="txtpaterno" placeholder="Paterno" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-3">'+
-                                        '<label>A. Materno<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="text" class="form-control" name="materno" id="txtmaterno" placeholder="Materno"" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
                                 '</div>'+
                             '</div>'+
                             '<div class="container">'+
@@ -259,48 +251,6 @@
                                         '<label>Confirmar contraseña<b style="color:#F44336 !important;">*</b></label>'+
                                         '<input type="password" class="form-control" name="pass2" id="txtpass2" required autocomplete="new-password" data-parsley-equalto="#txtpass" placeholder="Confirmar contraseña">'+
                                     '</div>'+
-
-                                    '<div class="col-md-9">'+
-                                        '<label>NSS<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="text" class="form-control" name="nss" id="txtnss"  onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-3">'+
-                                        '<label>Fecha de ingreso<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="date" class="form-control" name="ingreso" id="txtingreso" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-4">'+
-                                        '<label>Tel<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="number" class="form-control" name="tel" id="txttel" required autocomplete="tel" placeholder="Tel"  value="" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">'+
-                                    '</div>'+
-                                    '<div class="col-md-4">'+
-                                                    '<label>CURP<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="curp" id="txtcurp" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-4">'+
-                                                    '<label>RFC<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="rfc" id="txtrfc" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-12">'+
-                                        '<label>Empresa<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<select class="form-select" name="empresa_id" id="txtempresa_id" onkeyup="tipoLetra(this);" required>'+
-                                        '</select>'+
-                                '</div>'+
-                                    '<div class="col-md-3">'+
-                                        '<label>Puesto<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="text" class="form-control" name="puesto" id="txtsucursal" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                '<div class="col-md-3">'+
-                                    '<label>D. Vacaciones<b style="color:#F44336 !important;">*</b></label>'+
-                                    '<input type="number" class="form-control" name="diasvacaciones" id="txtdiasvacaciones" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+
-                                '<div class="col-md-3">'+
-                                        '<label>Horario L-V<b style="color:#F44336 !important;">*</b></label>'+
-                                        '<input type="time" class="form-control" name="horariolv_id" id="txthorariolv_id" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                    '</div>'+
-                                    '<div class="col-md-3">'+
-                                    '<label>Horario Sabado<b style="color:#F44336 !important;">*</b></label>'+
-                                    '<input type="time" class="form-control" name="horariosab_id" id="txthorariosab_id" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+
                                 '<div class="col-md-3">'+
                                     '<label>Rol<b style="color:#F44336 !important;">*</b></label>'+
                                         '<select class="form-select" name="rol" id="txtrol" placeholder="Rol" onkeyup="tipoLetra(this);" required>'+
@@ -395,19 +345,7 @@
             { data: 'id', name: 'id', orderable: true, searchable: true },
             { data: 'foto', name: 'foto', orderable: true, searchable: true },
             { data: 'name', name: 'name', orderable: true, searchable: true },
-            { data: 'lastname_p', name: 'lastname_p', orderable: true, searchable: true },
-            { data: 'lastname_m', name: 'lastname_m', orderable: true, searchable: true },
             { data: 'email', name: 'email', orderable: true, searchable: true },
-            { data: 'nss', name: 'nss', orderable: true, searchable: true },
-            { data: 'tel', name: 'tel', orderable: true, searchable: true },
-            { data: 'curp', name: 'curp', orderable: true, searchable: true },
-            { data: 'rfc', name: 'rfc', orderable: true, searchable: true },
-            { data: 'empresa_id', name: 'empresa_id', orderable: true, searchable: true },
-            { data: 'puesto', name: 'puesto', orderable: true, searchable: true },
-            { data: 'ingreso', name: 'ingreso', orderable: true, searchable: true },
-            { data: 'horariolv_id', name: 'horariolv_id', orderable: true, searchable: true },
-            { data: 'horariosab_id', name: 'horariosab_id', orderable: true, searchable: true },
-            { data: 'diasvacaciones', name: 'diasvacaciones', orderable: true, searchable: true },
             { data: 'rol', name: 'rol', orderable: true, searchable: true },
             { data: 'status', name: 'status', orderable: true, searchable: true },
         ],
@@ -433,14 +371,6 @@
                                                 '<div class="col-md-3">'+
                                                     '<label>Nombre(s)<b style="color:#F44336 !important;">*</b></label>'+
                                                     '<input type="text" class="form-control" name="nombre" id="txtnombre" placeholder="Nombre" onkeyup="tipoLetra(this);" required>'+
-                                                '</div>'+
-                                                '<div class="col-md-3">'+
-                                                    '<label>A. Paterno<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="paterno" id="txtpaterno" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                                '</div>'+
-                                                '<div class="col-md-3">'+
-                                                    '<label>A. Materno<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="materno" id="txtmaterno" placeholder=""" onkeyup="tipoLetra(this);" required>'+
                                                 '</div>'+
                                                 '<div class="col-md-2">'+
                                                 '<label>D.Vacaciones<b style="color:#F44336 !important;">*</b></label>'+
@@ -496,20 +426,8 @@
             $("#tabsform").html(tabs);
             $("#txtnumero").val(data.user.id);
             $("#txtnombre").val(data.user.name);
-            $("#txtpaterno").val(data.user.lastname_p);
-            $("#txtmaterno").val(data.user.lastname_m);
             $("#txtemail").val(data.user.email);
-            $("#txtnss").val(data.user.nss);
-            $("#txttel").val(data.user.tel);
-            $("#txtcurp").val(data.user.curp);
-            $("#txtrfc").val(data.user.rfc);
-            $("#txtpuesto").val(data.user.puesto);
-            $("#txtingreso").val(data.user.ingreso);
-            $("#txthorariolv_id").val(data.user.horariolv_id);
-            $("#txthorariosab_id").val(data.user.horariosab_id);
-            $("#txtdiasvacaciones").val(data.user.diasvacaciones);
             $("#txtrol").html(data.select_roles);
-            $("#txtempresa_id").html(data.select_empresaid);
             $("#txtfoto").val(data.user.foto);
             mostrarmodalformulario('MODIFICACION', data.permitirmodificacion);
             mostrarformulario();
