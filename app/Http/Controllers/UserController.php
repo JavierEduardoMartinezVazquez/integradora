@@ -164,9 +164,6 @@ class UserController extends Controller
         ->update([
             //atributo de la Base => $request-> nombre de la caja de texto
             'name'=> $request->nombre,
-            'tel' => $request->tel,
-            'curp' => $request->curp,
-            'rfc' => $request->rfc,
             //'rol' => $request->rol,
         ]);
         //$user->assignRole($request->rol);

@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-md-1">
                                 <div class="col-md-1">
-                                    <button type="submit" class="btn btn-danger" onclick="alta()">Agregar</button>
+                                    <button type="submit" class="btn btn-success" onclick="alta()">Agregar</button>
                                 </div>
                             </div>
                         </div>

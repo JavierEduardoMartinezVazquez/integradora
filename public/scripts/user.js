@@ -205,12 +205,6 @@
         })
     }
 
-    function obtenerempresaid(){
-        $.get(obtener_empresaid, function(select_empresaid){
-            $("#txtempresa_id").html(select_empresaid);
-            console.log(selectempresaid);
-        })
-    }
 
     function alta(){
         $("#titulomodal").html('Alta de Usuario');
@@ -222,9 +216,7 @@
         '<div class="col-12 col-sm-12">'+
                 '<div class="card-body">'+
                     '<div class="tab-content" id="custom-tabs-one-tabContent">'+
-
                         '<div class="tab-pane fade show active" id="p_datos" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">'+
-
                             '<div class="container">'+
                                 '<div class="form-group row">'+
                                     '<div class="col-md-1">'+
@@ -235,11 +227,7 @@
                                         '<label>Nombre(s):<b style="color:#F44336 !important;">*</b></label>'+
                                         '<input type="text" class="form-control" name="nombre" id="txtnombre" placeholder="Nombre" onkeyup="tipoLetra(this);" required>'+
                                     '</div>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="container">'+
-                                '<div class="form-group row">'+
-                                    '<div class="col-md-4">'+
+                                    '<div class="col-md-7">'+
                                         '<label>Correo Electrónico<b style="color:#F44336 !important;">*</b></label>'+
                                         '<input type="text" class="form-control" name="email" id="txtemail" placeholder="Email" required autocomplete="Email" data-parsley-type="email" onkeyup="tipoMinusculas(this);">'+
                                     '</div>'+
@@ -251,7 +239,7 @@
                                         '<label>Confirmar contraseña<b style="color:#F44336 !important;">*</b></label>'+
                                         '<input type="password" class="form-control" name="pass2" id="txtpass2" required autocomplete="new-password" data-parsley-equalto="#txtpass" placeholder="Confirmar contraseña">'+
                                     '</div>'+
-                                '<div class="col-md-3">'+
+                                '<div class="col-md-4">'+
                                     '<label>Rol<b style="color:#F44336 !important;">*</b></label>'+
                                         '<select class="form-select" name="rol" id="txtrol" placeholder="Rol" onkeyup="tipoLetra(this);" required>'+
                                         '</select>'+
@@ -353,7 +341,7 @@
         })
     }
     function obteneruser(numero){
-        $("#titulomodal").html('Modificación del Usuario');
+        $("#titulomodal").html('Modificación');
         $.get(obtener_user,{numero:numero },function(data){
             //se crea al formulario
             var tabs =
@@ -372,51 +360,10 @@
                                                     '<label>Nombre(s)<b style="color:#F44336 !important;">*</b></label>'+
                                                     '<input type="text" class="form-control" name="nombre" id="txtnombre" placeholder="Nombre" onkeyup="tipoLetra(this);" required>'+
                                                 '</div>'+
-                                                '<div class="col-md-2">'+
-                                                '<label>D.Vacaciones<b style="color:#F44336 !important;">*</b></label>'+
-                                                '<input type="number" class="form-control" name="diasvacaciones" id="txtdiasvacaciones" placeholder="" readonly onkeyup="tipoLetra(this);" required>'+
-                                             '</div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                        '<div class="container">'+
-                                            '<div class="form-group row">'+
-                                                '<div class="col-md-4">'+
+                                                '<div class="col-md-6">'+
                                                     '<label>Correo Electrónico<b style="color:#F44336 !important;">*</b></label>'+
                                                     '<input type="text" class="form-control" name="email" id="txtemail" placeholder="Email" readonly autocomplete="Email" data-parsley-type="email" onkeyup="tipoMinusculas(this);">'+
                                                 '</div>'+
-                                                '<div class="col-md-8">'+
-                                                    '<label>Sucursal<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="sucursal" id="txtsucursal" readonly onkeyup="tipoMinusculas(this);">'+
-                                            '</div>'+
-                                            '<div class="col-md-3">'+
-                                                    '<label>Fecha de ingreso<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="date" class="form-control" name="ingreso" id="txtingreso" placeholder="" readonly onkeyup="tipoLetra(this);" >'+
-                                                '</div>'+
-                                            '<div class="col-md-3" hidden>'+
-                                                    '<label>Horario L-V<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="time" class="form-control" name="horariolv_id" id="txthorariolv_id" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                                '</div>'+
-                                                '<div class="col-md-3" hidden>'+
-                                                '<label>Horario Sabado<b style="color:#F44336 !important;">*</b></label>'+
-                                                '<input type="time" class="form-control" name="horariosab_id" id="txthorariosab_id" placeholder="" onkeyup="tipoLetra(this);" required>'+
-                                            '</div>'+
-                                            '<div class="col-md-3">'+
-                                                    '<label>Tel<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="number" class="form-control" name="tel" id="txttel" placeholder="Tel" onkeyup="tipoLetra(this);" maxlength="10" required>'+
-                                                '</div>'+
-                                            '<div class="col-md-3">'+
-                                                    '<label>CURP<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<input type="text" class="form-control" name="curp" id="txtcurp" placeholder="CURP" onkeyup="tipoLetra(this);" required>'+
-                                                '</div>'+
-                                            '<div class="col-md-3">'+
-                                                '<label>R.F.C.<b style="color:#F44336 !important;">*</b></label>'+
-                                                '<input type="text" class="form-control" name="rfc" id="txtrfc" placeholder="RFC" onkeyup="tipoLetra(this);" required>'+
-                                            '</div>'+
-
-                                            '<div class="col-md-3" hidden>'+
-                                                '<label>Rol<b style="color:#F44336 !important;">*</b></label>'+
-                                                    '<select class="form-select" name="rol" id="txtrol" placeholder="Rol" onkeyup="tipoLetra(this);" required>'+
-                                            '</div>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'+

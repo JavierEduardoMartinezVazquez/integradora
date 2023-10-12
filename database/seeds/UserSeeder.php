@@ -22,14 +22,5 @@ class UserSeeder extends Seeder
             'foto' => 'control\img\usuario.jpg',
         ])->assignRole('Admin');
 
-        User::create([
-            'name' => 'Zayda Hasiel',
-            'email' => 'zayda.hasiel@sopamex.com.mx',
-            'password' => bcrypt('854620'),
-            'rol' => 'Admin',
-            'status' => 'ALTA',
-            'foto' => 'control\img\usuario.jpg',
-        ])->assignRole('Usuar');
-
     }
 }
