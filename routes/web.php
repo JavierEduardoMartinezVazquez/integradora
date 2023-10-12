@@ -27,6 +27,7 @@ Route::get('prueba', 'PruebaController@Prueba')->name('prueba');
 
 
 //Route::get('Start', 'WelcomeControlles@Start')->name('Start');
+Route::get('Tienda', 'TiendaController@Tienda')->name('Tienda');
 
 /*---------------Controlador Usuarios-----------------*/
 Route::get('User', 'UserController@User')->middleware('can:User')->name('User');
@@ -64,6 +65,17 @@ Route::get('obtener_hourhand', 'HourhandController@obtener_hourhand')->name('obt
 Route::post('modificar_hourhand', 'HourhandController@modificar_hourhand')->name('modificar_hourhand');
 Route::get('verificar_baja_hourhand', 'HourhandController@verificar_baja_hourhand')->name('verificar_baja_hourhand');
 Route::post('baja_hourhand', 'HourhandController@baja_hourhand')->name('baja_hourhand');
+
+/*---------------Controlador Productos-----------------*/
+Route::get('Productos', 'ProductosController@Productos')->name('Productos');
+Route::get('obtener_ultimo_id_productos', 'ProductosController@obtener_ultimo_id_productos')->name('obtener_ultimo_id_productos');
+Route::post('guardar_productos', 'ProductosController@guardar_productos')->name('guardar_productos');
+Route::get('listar_productos', 'ProductosController@listar_productos')->name('listar_productos');
+Route::get('obtener_productos', 'ProductosController@obtener_productos')->name('obtener_productos');
+Route::post('modificar_productos', 'ProductosController@modificar_productos')->name('modificar_productos');
+Route::get('verificar_baja_productos', 'ProductosController@verificar_baja_productos')->name('verificar_baja_productos');
+Route::post('baja_productos', 'ProductosController@baja_productos')->name('baja_productos');
+
 
 /*---------------Controlador Horariosreporte-----------------*/
 Route::get('Hourhandreporte', 'HourhandreporteController@Hourhandreporte')->name('Hourhandreporte');
