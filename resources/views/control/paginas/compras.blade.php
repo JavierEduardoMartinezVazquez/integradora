@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('titulo')
-    Horarios
+    Compras
 @endsection
     @section('additionals_css')
 @endsection
@@ -30,7 +30,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h4>Alta de Horarios</h4>
+                                    <h4>Control de Compras</h4>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -39,7 +39,7 @@
                                 <div class="col-md-1">
                                 </div>
                                 <div class="col-md-1">
-                                    <button type="submit" class="btn btn-danger" onclick="alta()">Agregar</button>
+                                    <button type="submit" class="btn btn-success" onclick="alta()">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +49,13 @@
                                     <tr>
                                         <th ><div style="width:90px !important;">Operación </div></th>
                                         <th>Id</th>
-                                        <th>Entrada</th>
-                                        <th>Salida</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Total</th>
+                                        <th>Metodo de pago</th>
+                                        <th>Usuario</th>
+                                        <th>Tel.</th>
+                                        <th>Direccion</th>
                                         <th>Estatus</th>
                                     </tr>
                                 </thead>
@@ -72,13 +77,13 @@
         });
     </script>
     <script>
-        var obtener_ultimo_id_hourhand = '{!!URL::to('obtener_ultimo_id_hourhand')!!}';
-        var guardar_hourhand = '{!!URL::to('guardar_hourhand')!!}';
-        var listar_hourhand = '{!!URL::to('listar_hourhand')!!}';
-        var obtener_hourhand = '{!!URL::to('obtener_hourhand')!!}';
-        var modificar_hourhand = '{!!URL::to('modificar_hourhand')!!}';
-        var verificar_baja_hourhand = '{!!URL::to('verificar_baja_hourhand')!!}';
-        var baja_hourhand = '{!!URL::to('baja_hourhand')!!}';     
+        var obtener_ultimo_id_compras = '{!!URL::to('obtener_ultimo_id_compras')!!}';
+        var guardar_compras = '{!!URL::to('guardar_compras')!!}';
+        var listar_compras = '{!!URL::to('listar_compras')!!}';
+        var obtener_compras = '{!!URL::to('obtener_compras')!!}';
+        var modificar_compras = '{!!URL::to('modificar_compras')!!}';
+        var verificar_baja_compras = '{!!URL::to('verificar_baja_compras')!!}';
+        var baja_compras = '{!!URL::to('baja_compras')!!}';     
     </script> 
-    <script src="scripts/hourhand.js"></script>
+    <script src="scripts/compras.js"></script>
 @endsection    

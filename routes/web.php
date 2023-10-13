@@ -44,8 +44,6 @@ Route::get('verificar_baja_user', 'UserController@verificar_baja_user')->name('v
 Route::post('baja_user', 'UserController@baja_user')->name('baja_user');
 Route::get('credencial_pdf/{user_id}', 'UserController@credencial_pdf')->name('credencial_pdf');
 
-
-
 /*---------------Controlador empresas-----------------*/
 Route::get('Business', 'BusinessController@Business')->name('Business');
 Route::get('obtener_ultimo_id_business', 'BusinessController@obtener_ultimo_id_business')->name('obtener_ultimo_id_business');
@@ -56,17 +54,7 @@ Route::post('modificar_business', 'BusinessController@modificar_business')->name
 Route::get('verificar_baja_business', 'BusinessController@verificar_baja_business')->name('verificar_baja_business');
 Route::post('baja_business', 'BusinessController@baja_business')->name('baja_business');
 
-/*---------------Controlador Horarios-----------------*/
-Route::get('Hourhand', 'HourhandController@Hourhand')->name('Hourhand');
-Route::get('obtener_ultimo_id_hourhand', 'HourhandController@obtener_ultimo_id_hourhand')->name('obtener_ultimo_id_hourhand');
-Route::post('guardar_hourhand', 'HourhandController@guardar_hourhand')->name('guardar_hourhand');
-Route::get('listar_hourhand', 'HourhandController@listar_hourhand')->name('listar_hourhand');
-Route::get('obtener_hourhand', 'HourhandController@obtener_hourhand')->name('obtener_hourhand');
-Route::post('modificar_hourhand', 'HourhandController@modificar_hourhand')->name('modificar_hourhand');
-Route::get('verificar_baja_hourhand', 'HourhandController@verificar_baja_hourhand')->name('verificar_baja_hourhand');
-Route::post('baja_hourhand', 'HourhandController@baja_hourhand')->name('baja_hourhand');
-
-/*---------------Controlador Horarios-----------------*/
+/*---------------Controlador Ventas-----------------*/
 Route::get('Ventas', 'VentasController@Ventas')->name('Ventas');
 Route::get('obtener_ultimo_id_ventas', 'VentasController@obtener_ultimo_id_ventas')->name('obtener_ultimo_id_ventas');
 Route::post('guardar_ventas', 'VentasController@guardar_ventas')->name('guardar_ventas');
@@ -75,6 +63,16 @@ Route::get('obtener_ventas', 'VentasController@obtener_ventas')->name('obtener_v
 Route::post('modificar_ventas', 'VentasController@modificar_ventas')->name('modificar_ventas');
 Route::get('verificar_baja_ventas', 'VentasController@verificar_baja_ventas')->name('verificar_baja_ventas');
 Route::post('baja_ventas', 'VentasController@baja_ventas')->name('baja_ventas');
+
+/*---------------Controlador Compras-----------------*/
+Route::get('Compras', 'ComprasController@Compras')->name('Compras');
+Route::get('obtener_ultimo_id_compras', 'ComprasController@obtener_ultimo_id_compras')->name('obtener_ultimo_id_compras');
+Route::post('guardar_compras', 'ComprasController@guardar_compras')->name('guardar_compras');
+Route::get('listar_compras', 'ComprasController@listar_compras')->name('listar_compras');
+Route::get('obtener_compras', 'ComprasController@obtener_compras')->name('obtener_compras');
+Route::post('modificar_compras', 'ComprasController@modificar_compras')->name('modificar_compras');
+Route::get('verificar_baja_compras', 'ComprasController@verificar_baja_compras')->name('verificar_baja_compras');
+Route::post('baja_compras', 'ComprasController@baja_compras')->name('baja_compras');
 
 /*---------------Controlador Productos-----------------*/
 Route::get('Productos', 'ProductosController@Productos')->name('Productos');
@@ -85,17 +83,6 @@ Route::get('obtener_productos', 'ProductosController@obtener_productos')->name('
 Route::post('modificar_productos', 'ProductosController@modificar_productos')->name('modificar_productos');
 Route::get('verificar_baja_productos', 'ProductosController@verificar_baja_productos')->name('verificar_baja_productos');
 Route::post('baja_productos', 'ProductosController@baja_productos')->name('baja_productos');
-
-
-/*---------------Controlador Horariosreporte-----------------*/
-Route::get('Hourhandreporte', 'HourhandreporteController@Hourhandreporte')->name('Hourhandreporte');
-Route::get('obtener_ultimo_id_hourhandreporte', 'HourhandreporteController@obtener_ultimo_id_hourhandreporte')->name('obtener_ultimo_id_hourhandreporte');
-Route::post('guardar_hourhandreporte', 'HourhandreporteController@guardar_hourhandreporte')->name('guardar_hourhandreporte');
-Route::get('listar_hourhandreporte', 'HourhandreporteController@listar_hourhandreporte')->name('listar_hourhandreporte');
-Route::get('obtener_hourhandreporte', 'HourhandreporteController@obtener_hourhandreporte')->name('obtener_hourhandreporte');
-Route::post('modificar_hourhandreporte', 'HourhandreporteController@modificar_hourhandreporte')->name('modificar_hourhandreporte');
-Route::get('verificar_baja_hourhandreporte', 'HourhandreporteController@verificar_baja_hourhandreporte')->name('verificar_baja_hourhandreporte');
-Route::post('baja_hourhandreporte', 'HourhandreporteController@baja_hourhandreporte')->name('baja_hourhandreporte');
 
 /*---------------Controlador Vacaciones-----------------*/
 Route::get('Holidays', 'HolidaysController@Holidays')->name('Holidays');
@@ -156,16 +143,6 @@ Route::get('obtener_exits', 'ExitsController@obtener_exits')->name('obtener_exit
 Route::post('modificar_exits', 'ExitsController@modificar_exits')->name('modificar_exits');
 Route::get('verificar_baja_exits', 'ExitsController@verificar_baja_exits')->name('verificar_baja_exits');
 Route::post('baja_exits', 'ExitsController@baja_exits')->name('baja_exits');
-
-/*--------------------Controlador Nomina-------------------*/
-Route::get('Nominas', 'NominasController@Nominas')->name('Nominas');
-Route::get('obtener_ultimo_id_nominas', 'NominasController@obtener_ultimo_id_nominas')->name('obtener_ultimo_id_nominas');
-Route::post('guardar_nominas', 'NominasController@guardar_nominas')->name('guardar_nominas');
-Route::get('listar_nominas', 'NominasController@listar_nominas')->name('listar_nominas');
-Route::get('obtener_nominas', 'NominasController@obtener_nominas')->name('obtener_nominas');
-Route::post('modificar_nominas', 'NominasController@modificar_nominas')->name('modificar_nominas');
-Route::get('verificar_baja_nominas', 'NominasController@verificar_baja_nominas')->name('verificar_baja_nominas');
-Route::post('baja_nominas', 'NominasController@baja_nominas')->name('baja_nominas');
 
 /*--------------------Controlador Asistencias-------------------*/
 Route::get('Assistances', 'AssistancesController@Assistances')->middleware('can:Assistances')->name('Assistances');

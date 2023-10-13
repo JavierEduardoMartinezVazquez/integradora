@@ -3,7 +3,7 @@
     var form;
 
     function init(){
-        listarhourhand();
+        listarcompras();
      }
 
     function mostrarmodalformulario(movimiento, permitirmodificacion){
@@ -32,8 +32,8 @@
         $("#formulario").hide();
         $("#contenidomodaltablas").show();
     }
-    function obtenerultimoidhourhand(){
-        $.get(obtener_ultimo_id_hourhand, function(numero){
+    function obtenerultimoidcompras(){
+        $.get(obtener_ultimo_id_compras, function(numero){
           $("#txtnumero").val(numero);
         })  
     }
@@ -51,7 +51,7 @@
         $("#tabsform").empty();
     }
     function alta(){
-        $("#titulomodal").html('Alta Horario');
+        $("#titulomodal").html('compras');
         mostrarmodalformulario('ALTA');
         mostrarformulario();
         //formulario alta
@@ -64,30 +64,41 @@
                                 '<div class="col-md-1">'+
                                     '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
                                     '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
-                                '</div>'+ 
-                                '<div class="col-md-1">'+
-                                '</div>'+ 
+                                '</div>'+
+                                '<div class="col-md-7">'+ 
+                                    '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+ 
+                                    '<input type="text" class="form-control" name="producto" id="txtproducto" onkeyup="tipoLetra(this);" required>'+
+                                '</div>'+
                                 '<div class="col-md-4">'+ 
-                                    '<label>Entrada<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="time" class="form-control" name="entrada" id="txtentrada" placeholder="Entrada" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+ 
-                                '<div class="col-md-1">'+
-                                '</div>'+ 
-                                '<div class="col-md-4">'+ 
-                                '<label>Salida<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="time" class="form-control" name="salida" id="txtsalida" placeholder="Salida" onkeyup="tipoLetra(this);" required>'+
+                                '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
-                              
-
-                            '<div class="col-md-2">'+
-                            '</div>'+ 
-                            
+                            '<div class="col-md-4">'+ 
+                                '<label>Total<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="total" id="txttotal" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+ 
+                                '<label>M. Pago<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="metodopago" id="txtmetodopago" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+ 
+                                '<label>Usuario<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="usuario" id="txtusuario" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+ 
+                                '<label>Tel.<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="tel" id="txttel" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-8">'+ 
+                                '<label>Direccion<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="text" class="form-control" name="direccion" id="txtdireccion" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
                     '</div>'+    
                 '</div>'+
             '</div>'+ 
         '</div>';
         $("#tabsform").html(tabs);//tabsform es el ID del DIV donde se muestra el formulario del archivo JS <2>
-        obtenerultimoidhourhand();
+        obtenerultimoidcompras();
     }
     $("#btnGuardar").on('click', function (e) {
         e.preventDefault(); //       ID del formulario donde se muestra el modal
@@ -96,7 +107,7 @@
         if (form.parsley().isValid()){
             $.ajax({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url: guardar_hourhand,
+                url: guardar_compras,
                 type: "post",
                 dataType: "html",
                 data: formData,
@@ -135,7 +146,7 @@
                 form.parsley().validate();
         }
     });
-    function listarhourhand() {
+    function listarcompras() {
         $("#tablelist").DataTable({
           "autoWidth": false,
           "sScrollX": "110%",
@@ -143,23 +154,28 @@
           'language': {
               "url": "control/plugins/datatables/es_es.json",
         },
-        ajax: listar_hourhand,
+        ajax: listar_compras,
         "createdRow": function( row, data){
             if( data.status ==  `BAJA`){ $(row).css('font-weight','bold').css('color','#dc3545');}
         },
         columns: [
             { data: 'operaciones', name: 'operaciones', orderable: false, searchable: false },
             { data: 'id', name: 'id', orderable: true, searchable: true },
-            { data: 'entrada', name: 'entrada', orderable: true, searchable: true },
-            { data: 'salida', name: 'salida', orderable: true, searchable: true },
+            { data: 'producto', name: 'producto', orderable: true, searchable: true },
+            { data: 'precio', name: 'precio', orderable: true, searchable: true },
+            { data: 'total', name: 'total', orderable: true, searchable: true },
+            { data: 'metodopago', name: 'metodopago', orderable: true, searchable: true },
+            { data: 'usuario', name: 'usuario', orderable: true, searchable: true },
+            { data: 'tel', name: 'tel', orderable: true, searchable: true },
+            { data: 'direccion', name: 'direccion', orderable: true, searchable: true },
             { data: 'status', name: 'status', orderable: true, searchable: true },
         ],
         "order": [[ 1, "asc" ]]
         })
     }
-    function obtenerhourhand(numero){
-        $("#titulomodal").html('Modificación Horario');
-        $.get(obtener_hourhand,{numero:numero },function(data){
+    function obtenercompras(numero){
+        $("#titulomodal").html('Modificación');
+        $.get(obtener_compras,{numero:numero },function(data){
             //se crea al formlario
             var tabs =
             '<div class="card-body">'+
@@ -167,34 +183,52 @@
                     '<div class="tab-pane active" id="datosgenerales">'+
                         '<div class="container">'+
                             '<div class="form-group row">'+
-                                '<div class="col-md-1">'+
-                                    '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
-                                    '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
-                                '</div>'+ 
-                                '<div class="col-md-1">'+
-                                '</div>'+ 
-                                '<div class="col-md-4">'+ 
-                                    '<label>Entrada<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="time" class="form-control" name="entrada" id="txtentrada" placeholder="Entrada" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+ 
-                                '<div class="col-md-1">'+
-                                '</div>'+ 
-                                '<div class="col-md-4">'+ 
-                                '<label>Salida<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="time" class="form-control" name="salida" id="txtsalida" placeholder="Salida" onkeyup="tipoLetra(this);" required>'+
-                            '</div>'+   
-                            '<div class="col-md-2">'+
-                            '</div>'+ 
-                            
+                            '<div class="col-md-1">'+
+                            '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
+                            '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
+                        '</div>'+
+                        '<div class="col-md-7">'+ 
+                            '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+ 
+                            '<input type="text" class="form-control" name="producto" id="txtproducto" onkeyup="tipoLetra(this);" required>'+
+                        '</div>'+
+                        '<div class="col-md-4">'+ 
+                        '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                    '<div class="col-md-4">'+ 
+                        '<label>Total<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="total" id="txttotal" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                    '<div class="col-md-4">'+ 
+                        '<label>M. Pago<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="metodopago" id="txtmetodopago" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                    '<div class="col-md-4">'+ 
+                        '<label>Usuario<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="usuario" id="txtusuario" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                    '<div class="col-md-4">'+ 
+                        '<label>Tel.<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="tel" id="txttel" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                    '<div class="col-md-8">'+ 
+                        '<label>Direccion<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="text" class="form-control" name="direccion" id="txtdireccion" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
                     '</div>'+    
                 '</div>'+
             '</div>'+ 
         '</div>';
             $("#tabsform").html(tabs);
             console.log(data);//mandas el arreglo
-            $("#txtnumero").val(data.hourhand.id);
-            $("#txtentrada").val(data.hourhand.entrada);
-            $("#txtsalida").val(data.hourhand.salida);
+            $("#txtnumero").val(data.compras.id);
+            $("#txtproducto").val(data.compras.producto);
+            $("#txtprecio").val(data.compras.precio);
+            $("#txttotal").val(data.compras.total);
+            $("#txtmetodopago").val(data.compras.metodopago);
+            $("#txtusuario").val(data.compras.usuario);
+            $("#txttel").val(data.compras.tel);
+            $("#txtdireccion").val(data.compras.direccion);
             mostrarmodalformulario('MODIFICACION', data.permitirmodificacion);
             mostrarformulario();
         }).fail( function() {
@@ -214,7 +248,7 @@ $("#btnGuardarModificacion").on('click', function (e) {
     if (form.parsley().isValid()){
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url:modificar_hourhand,
+            url:modificar_compras,
             type: "post",
             dataType: "html",
             data: formData,
@@ -253,8 +287,8 @@ $("#btnGuardarModificacion").on('click', function (e) {
         form.parsley().validate();
     }
 });
-function verificarbajahourhand(numero){
-    $.get(verificar_baja_hourhand, {numero:numero}, function(data){
+function verificarbajacompras(numero){
+    $.get(verificar_baja_compras, {numero:numero}, function(data){
         if(data.status == 'BAJA'){
             //ID del input que esta dentro del formulario del modal de baja
             $("#num").val();
@@ -279,7 +313,7 @@ $("#aceptar").on('click', function(e){
     if (form.parsley().isValid()){
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url:baja_hourhand,
+            url:baja_compras,
             type: "post",
             dataType: "html",
             data: formData,

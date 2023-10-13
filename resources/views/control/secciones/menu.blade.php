@@ -63,7 +63,7 @@
                 <ul class="nav nav-treeview">
                 
                   <li class="nav-item">
-                    <a href="{{route('Holidays')}}" class="nav-link" id="hol">
+                    <a href="{{route('Compras')}}" class="nav-link" id="hol">
                       <i class="nav-icon nav-icon fas fa-star"></i>
                       <p>Mis Compras</p>
                     </a>
