@@ -13,7 +13,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
-            <a class="nav-link" href="{{route('Tienda')}}">
+            <a class="nav-link" href="{{route('home')}}">
               <i class="nav-icon fas fa-store"></i>
               <p>Tienda</p>
             </a>
@@ -42,7 +42,7 @@
                     </a>
                   </li>
                   @endcan
-                  @can('Hourhand')
+                  @can('User')
                   <li class="nav-item">
                     <a href="{{route('Productos')}}" class="nav-link" id="">
                     <i class="nav-icon nav-icon fas fa-eye"></i>
@@ -51,7 +51,7 @@
                   </li>
                 </ul>
                 @endcan
-              @can('Holidays')
+              @can('menuuser')
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview">
                 <a class="nav-link">
