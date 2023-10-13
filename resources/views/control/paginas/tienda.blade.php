@@ -35,7 +35,7 @@
                 <div class="card-header" style="background-color: #8e4000">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="titulo">Tienda</div>
+                            <div class="titulo">Tiendaa</div>
                         </div>
                     </div>
                 </div>
