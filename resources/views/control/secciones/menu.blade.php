@@ -36,7 +36,7 @@
                   @endcan
                   @can('Business')
                   <li class="nav-item">
-                    <a href="{{route('Business')}}" class="nav-link" id="">
+                    <a href="{{route('Ventas')}}" class="nav-link" id="">
                       <i class="nav-icon fa fa-flag"></i>
                       <p>Ventas</p>
                     </a>

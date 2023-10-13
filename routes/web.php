@@ -66,6 +66,16 @@ Route::post('modificar_hourhand', 'HourhandController@modificar_hourhand')->name
 Route::get('verificar_baja_hourhand', 'HourhandController@verificar_baja_hourhand')->name('verificar_baja_hourhand');
 Route::post('baja_hourhand', 'HourhandController@baja_hourhand')->name('baja_hourhand');
 
+/*---------------Controlador Horarios-----------------*/
+Route::get('Ventas', 'VentasController@Ventas')->name('Ventas');
+Route::get('obtener_ultimo_id_ventas', 'VentasController@obtener_ultimo_id_ventas')->name('obtener_ultimo_id_ventas');
+Route::post('guardar_ventas', 'VentasController@guardar_ventas')->name('guardar_ventas');
+Route::get('listar_ventas', 'VentasController@listar_ventas')->name('listar_ventas');
+Route::get('obtener_ventas', 'VentasController@obtener_ventas')->name('obtener_ventas');
+Route::post('modificar_ventas', 'VentasController@modificar_ventas')->name('modificar_ventas');
+Route::get('verificar_baja_ventas', 'VentasController@verificar_baja_ventas')->name('verificar_baja_ventas');
+Route::post('baja_ventas', 'VentasController@baja_ventas')->name('baja_ventas');
+
 /*---------------Controlador Productos-----------------*/
 Route::get('Productos', 'ProductosController@Productos')->name('Productos');
 Route::get('obtener_ultimo_id_productos', 'ProductosController@obtener_ultimo_id_productos')->name('obtener_ultimo_id_productos');
