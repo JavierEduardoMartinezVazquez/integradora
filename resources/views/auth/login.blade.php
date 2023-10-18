@@ -48,7 +48,7 @@
                                         </span>
                                     @enderror
                                         <br>
-                                        <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Password') }}</label>
+                                        <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
                                         <div class="col-md-12">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                     @error('password')
@@ -72,11 +72,11 @@
                                         </div>
                                         <a class="btn btn-link" href="{{ route('register') }}">Registrate</a>
                                     </div> 
-                                    {{-- @if (Route::has('password.request'))
+                                     @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
-                                @endif --}}
+                                    @endif
                                 </form>
                             </div>
                         </div>

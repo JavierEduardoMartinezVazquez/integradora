@@ -36,19 +36,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'verificar_baja_user'])->assignRole($role1);
         Permission::create(['name' => 'baja_user'])->assignRole($role1);
 
-
-        Permission::create(['name' => 'Business'])->assignRole($role1);
-        Permission::create(['name' => 'obtener_ultimo_id_business'])->assignRole($role1);
-        Permission::create(['name' => 'guardar_business'])->assignRole($role1);
-        Permission::create(['name' => 'listar_business'])->assignRole($role1);
-        Permission::create(['name' => 'obtener_business'])->assignRole($role1);
-        Permission::create(['name' => 'modificar_business'])->assignRole($role1);
-        Permission::create(['name' => 'verificar_baja_business'])->assignRole($role1);
-        Permission::create(['name' => 'baja_business'])->assignRole($role1);
-
-
-
-
         Permission::create(['name' => 'Exits'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'obtener_ultimo_id_exits'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'guardar_exits'])->syncRoles([$role1,$role2]);
@@ -58,28 +45,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'verificar_baja_exits'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'baja_exits'])->syncRoles([$role1,$role2]);
 
-
-
-
-        Permission::create(['name' => 'Assistances'])->assignRole($role1);
-        Permission::create(['name' => 'obtener_ultimo_id_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'guardar_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'listar_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'obtener_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'modificar_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'verificar_baja_assistances'])->assignRole($role1);
-        Permission::create(['name' => 'baja_assistances'])->assignRole($role1);
-        
-
-
-        Permission::create(['name' => 'Assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'obtener_ultimo_id_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'guardar_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'listar_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'obtener_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'modificar_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'verificar_baja_assistancesreports'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'baja_assistancesreports'])->syncRoles([$role1,$role2]);
 
     }
 }

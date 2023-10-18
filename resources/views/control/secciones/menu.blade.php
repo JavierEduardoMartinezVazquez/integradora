@@ -34,7 +34,7 @@
                     </a>
                   </li>
                   @endcan
-                  @can('Business')
+                  @can('User')
                   <li class="nav-item">
                     <a href="{{route('Ventas')}}" class="nav-link" id="">
                       <i class="nav-icon fa fa-flag"></i>
@@ -69,72 +69,7 @@
                     </a>
                   </li>
                   @endcan
-                
-                  {{-- @can('User')
-                  <li class="nav-item">
-                    <a href="{{route('Assistancesreports')}}" class="nav-link">
-                      <i class="nav-icon far fa-calendar-alt"></i>
-                      <p>Mis Compras</p>
-                    </a>
-                  </li>
-                  @endcan
-                
-                  @can('Nominas')
-                  <li class="nav-item">
-                    <a href="{{route('Nominas')}}" class="nav-link">
-                      <i class="nav-icon fas fa-user"></i>
-                      <p> compras</p>
-                    </a>
-                  </li>
-                  </ul>
-                  @endcan --}}
-
-
-
-{{-- @can('Businessreporte')
-      <li class="nav-item has-treeview">
-              <a class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
-                <p>Reportes
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-
-              <li class="nav-item">
-                <a href="{{route('Businessreporte')}}" class="nav-link" id="">
-                  <i class="nav-icon far fas fa-cogs"></i>
-                  <p>Empresas</p>
-                </a>
-              </li>
-              @endcan --}}
-              {{-- @can('Assistances')
-              <li class="nav-item">
-                <a href="{{route('Assistances')}}" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
-                  <p>Asistencias</p>
-                </a>
-              </li>
-              @endcan --}}
-
-             {{--  @can('Hourhandreporte')
-              <li class="nav-item">
-                <a href="{{route('Hourhandreporte')}}" class="nav-link" id="">
-                <i class="nav-icon nav-icon fas fa-book"></i>
-                  <p>Horarios</p>
-                </a>
-              </li>
-              @endcan
-              @can('Permi')
-              <li class="nav-item">
-                <a href="{{route('Permi')}}" class="nav-link" id="perm">
-                  <i class="nav-icon fas fa-calendar-check"></i>
-                  <p>Permisos</p>
-                </a>
-              </li> --}}
-            </ul>
-           {{--  @endcan --}}
-
+                      </ul>
                         <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
