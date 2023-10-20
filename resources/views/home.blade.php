@@ -99,55 +99,10 @@
 }
 </style>
 
-        <div class="slider">
-          <div class="slide-track">
-
-            <div class="slide"><img src="control\img\receta1.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta2.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta3.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta1.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta2.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta3.jpg" alt="">
-            </div>
-
-
-            <div class="slide"><img src="control\img\receta1.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta2.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta3.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta1.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta2.jpg" alt="">
-            </div>
-            <div class="slide"><img src="control\img\receta3.jpg" alt="">
-            </div>
-
-          </div>
-        </div>
-
         <div class="content-wrapper"> 
           <section class="content-header">
               <div class="container-fluid">
                   <div class="row mb-2">
-                  </div>
-              </div>
-          </section> 
-  
-          <section class="content">
-              <div class="card">
-                  <div class="card-header" style="background-color: #8e4000">
-                      <div class="row">
-                          <div class="col-sm-12">
-                              <div class="titulo">Tienda</div>
-                          </div>
-                      </div>
                   </div>
               </div>
           </section>
@@ -267,6 +222,38 @@
                   </div>
               </div>
           </section>
+          <div class="slider">
+            <div class="slide-track">
+  
+              <div class="slide"><img src="control\img\receta1.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta2.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta3.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta1.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta2.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta3.jpg" alt="">
+              </div>
+  
+  
+              <div class="slide"><img src="control\img\receta1.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta2.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta3.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta1.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta2.jpg" alt="">
+              </div>
+              <div class="slide"><img src="control\img\receta3.jpg" alt="">
+              </div>
+  
+            </div>
+          </div>
       </div>
 
 </body>
