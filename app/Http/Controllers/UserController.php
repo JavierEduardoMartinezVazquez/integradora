@@ -43,18 +43,6 @@ class UserController extends Controller
                 ->make(true);
         }
     }
-    public function obtener_horario(Request $request){
-        if($request->ajax()){
-            $data = C_hourhand::where('status', 'ALTA')->orderBy("id", "ASC")->get();
-            return DataTables::of($data)
-                ->addColumn('operaciones', function($data){
-                    $boton = '<div class="btn bg-green btn-xs waves-effect" onclick="seleccionarhorario('.$data->id.',\')">Seleccionar</div>';
-                    return $boton;
-                })
-                ->rawColumns(['operaciones'])
-                ->make(true);
-        }
-    }
     public function obtener_roles(){
         $roles = Role::all();
         $select_roles= "<option >Seleccionar...</option>";

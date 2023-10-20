@@ -70,13 +70,13 @@
                   </li>
                   @endcan
                       </ul>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         if (confirm('¿Estas seguro que quieres cerrar sesión?')){
                            document.getElementById('logout-form').submit();}">
                         <i class="fas fa-sign-out-alt"></i>
-                        </a>
+                        </a> --}}
                       </ul>
                     </nav>
                   </div>

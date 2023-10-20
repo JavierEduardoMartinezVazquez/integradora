@@ -33,7 +33,7 @@
     <center>
         <h2>
             <strong>
-                <p class="text-secondary">RECUPERAR CONTRASEÑA</p>
+                <p class="text-secondary">R E C U P E R A R <br> C O N T R A S E Ñ A</p>
             </strong>
         </h2>
         <div class="col-md-1 border border-warning"></div>
