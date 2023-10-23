@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('titulo')
-    Productos
+    Productos Control
 @endsection
     @section('additionals_css')
 @endsection
@@ -30,7 +30,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h4>Control de Productos</h4>
+                                    <h4>Productos</h4>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -41,16 +41,14 @@
                                 <div class="col-md-1">
                                     <button type="submit" class="btn btn-success" onclick="alta()">Agregar</button>
                                 </div>
-                            </div>
-                        </div>
                         <div class="card-body table-responsive">
                             <table id="tablelist" class=" tablelist table table-bordered table-striped display nowrap">
                                 <thead>
                                     <tr>
-                                        <th ><div style="width:90px !important;">Operación </div></th>
-                                        <th>Id</th>
-                                        <th>Paquete</th>
-                                        <th>Cantidad</th>
+                                        <th ><div style="width:90px !important;">Operación</div></th>
+                                        <th>#</th>
+                                        <th>Producto</th>
+                                        <th>Foto del producto</th>
                                         <th>Precio</th>
                                         <th>Existencias</th>
                                         <th>Estatus</th>

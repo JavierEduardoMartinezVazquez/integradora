@@ -99,6 +99,8 @@
 }
 </style>
 
+        
+
         <div class="content-wrapper"> 
           <section class="content-header">
               <div class="container-fluid">
@@ -222,38 +224,6 @@
                   </div>
               </div>
           </section>
-          <div class="slider">
-            <div class="slide-track">
-  
-              <div class="slide"><img src="control\img\receta1.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta2.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta3.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta1.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta2.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta3.jpg" alt="">
-              </div>
-  
-  
-              <div class="slide"><img src="control\img\receta1.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta2.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta3.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta1.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta2.jpg" alt="">
-              </div>
-              <div class="slide"><img src="control\img\receta3.jpg" alt="">
-              </div>
-  
-            </div>
-          </div>
       </div>
 
 </body>

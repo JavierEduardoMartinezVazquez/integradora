@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Facades\DataTables;
 use App\C_productos;
-
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -27,12 +26,21 @@ class ProductosController extends Controller
             $id = 1;
         }else{
             $id = $ultimoNumeroTabla[0]->id+1;
-        }
+        }   
         $productos = new C_productos;
-        $productos->paquete=$request->paquete;
-        $productos->cantidad=$request->cantidad;
+
+        $productos->producto=$request->producto;
+        if ($request->hasFile('fotografia')){
+            $file=$request->file('fotografia');
+            $destinationPath = 'img/productosfoto/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('fotografia')->move($destinationPath, $filename);
+            $productos->fotografia = $destinationPath . $filename;
+
+        }
         $productos->precio=$request->precio;
-        $productos->existencia=$request->existencia;
+        $productos->existencias=$request->existencias;
+        
         $productos->status='ALTA';        
         $productos->save();
         return response()->json($productos);
@@ -40,8 +48,12 @@ class ProductosController extends Controller
     public function listar_productos (Request $request)
     {
         if($request->ajax()){
-            $data = C_productos::select('id', 'paquete', 'cantidad', 'precio', 'existencia', 'status');
+            $data = C_productos::select('id','producto','precio','fotografia','existencias','status');
             return DataTables::of($data)
+            ->addColumn('fotografia', function ($data) {
+                $url= asset($data->fotografia);
+                return '<img src="'.$url.'" class="img-fluid img-thumbnail" width="50px" height="50px"/>';
+            })
             ->addColumn('operaciones', function($data){
                 $operaciones = '<div class="container">'.
                                     '<div class="row">'.
@@ -51,7 +63,7 @@ class ProductosController extends Controller
                                 '</div>';
                 return $operaciones;
             })
-            ->rawColumns(['operaciones'])
+            ->rawColumns(['operaciones', 'fotografia'])
             ->make(true);
         }
     }
@@ -73,10 +85,11 @@ class ProductosController extends Controller
         C_productos::where('id', $request->numero)
         ->update([
             //atributo de la Base => $request-> nombre de la caja de texto
-            'paquete'=> $request->paquete,
-            'cantidad'=> $request->cantidad,
+            
+            'producto'=> $request->producto,
             'precio'=> $request->precio,
-            'existencia'=> $request->existencia
+            'existencias'=> $request->existencias,
+            
         ]);
         return response()->json($productos);
     }
@@ -94,5 +107,6 @@ class ProductosController extends Controller
         ]);
         return response()->json($productos);
     }
+    
 }
 

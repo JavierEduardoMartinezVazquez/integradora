@@ -6,24 +6,24 @@
         listarproductos();
      }
 
-    function mostrarmodalformulario(movimiento, permitirmodificacion){
+    function mostrarmodalformulario(movimiento, productostirmodificacion){
         $("#Form_Modal").modal('show');
         if(movimiento=='ALTA'){
             $('#btnGuardar').show();
             $('#btnGuardarModificacion').hide();
         }else if(movimiento == 'MODIFICACION'){
-            if(permitirmodificacion == 1){
+            if(productostirmodificacion == 1){
                 $('#btnGuardar').hide();
                 $('#btnGuardarModificacion').show();
             }else{
                 $("#btnGuardar").hide();
                 $("#btnGuardarModificacion").hide();
-            }    
+            }
         }
     }
     //mostrar formulario en modal y ocultar tabla de seleccion
     function mostrarformulario(){
-        $("#formulario").show();// $("#formulario") es el ID del DIV del formulario del modal <1> 
+        $("#formulario").show();// $("#formulario") es el ID del DIV del formulario del modal <1>
         $("#contenidomodaltablas").hide();
     }
 
@@ -35,11 +35,11 @@
     function obtenerultimoidproductos(){
         $.get(obtener_ultimo_id_productos, function(numero){
           $("#txtnumero").val(numero);
-        })  
+        })
     }
     //limpiar todos los inputs del formulario alta
     function limpiar(){
-        $("#form_Modal_pricipal")[0].reset();   
+        $("#form_Modal_pricipal")[0].reset();
         //Resetear las validaciones del formulario alta
         form = $("#form_Modal_pricipal");
         form.parsley().reset();
@@ -51,7 +51,7 @@
         $("#tabsform").empty();
     }
     function alta(){
-        $("#titulomodal").html('Alta de productos SOPAMEX');
+        $("#titulomodal").html('Alta de Productos');
         mostrarmodalformulario('ALTA');
         mostrarformulario();
         //formulario alta
@@ -61,30 +61,33 @@
                     '<div class="tab-pane active" id="datosgenerales">'+
                         '<div class="container">'+
                             '<div class="form-group row">'+
-                                '<div class="col-md-1">'+
-                                    '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
-                                    '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
-                                '</div>'+ 
-                                '<div class="col-md-11">'+ 
-                                    '<label>Paquete<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="string" class="form-control" name="paquete" id="txtpaquete" placeholder="Nombre del paquete" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-2">'+
+                                    '<label>Numero<b style="color:#F44336 !important;">*</b></label>'+
+                                    '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+
                                 '</div>'+
-                                '<div class="col-md-2">'+ 
-                                    '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="number" class="form-control" name="cantidad" id="txtcantidad" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+
-                                '<div class="col-md-4">'+ 
-                                    '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="number" class="form-control" name="precio" id="txtprecio" step="0.01" min="0" onkeyup="tipoLetra(this);" required>'+
-                                '</div>'+
-                                '<div class="col-md-2">'+ 
-                                '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="number" class="form-control" name="existencia" id="txtexistencia" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-10">'+
+                                '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="text" class="form-control" name="producto" id="txtproducto" placeholder="Nombre del producto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
-                    '</div>'+    
+                            '<form action = "{{route(control.paginas.productos)}}" method="POST"enctype="multipart/form-data">'+
+                                '<div class="col-md-6">'+
+                                '<label>Foto<b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="file" class="form-control" name="fotografia" id="txtfotografia" onkeyup="tipoLetra(this);" required>'+
+                                '</div>'+
+                                '</form>'+
+                            '<div class="col-md-6">'+
+                                '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-6">'+
+                                '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="text" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
                 '</div>'+
-            '</div>'+ 
-        '</div>';
+            '</div>';
         $("#tabsform").html(tabs);//tabsform es el ID del DIV donde se muestra el formulario del archivo JS <2>
         obtenerultimoidproductos();
     }
@@ -123,7 +126,7 @@
                         });
                     }else{
                         toastr.error( "Aviso, estamos experimentando problemas, contacta al administrador del sistema", "Mensaje", {
-                            "timeOut": "600",        
+                            "timeOut": "600",
                             "progressBar": true,
                             "extendedTImeout": "6000"
                         });
@@ -149,17 +152,17 @@
         columns: [
             { data: 'operaciones', name: 'operaciones', orderable: false, searchable: false },
             { data: 'id', name: 'id', orderable: true, searchable: true },
-            { data: 'paquete', name: 'paquete', orderable: true, searchable: true },
-            { data: 'cantidad', name: 'cantidad', orderable: true, searchable: true },
+            { data: 'producto', name: 'producto', orderable: true, searchable: true },
+            { data: 'fotografia', name: 'fotografia', orderable: true, searchable: true },
             { data: 'precio', name: 'precio', orderable: true, searchable: true },
-            { data: 'existencia', name: 'existencia', orderable: true, searchable: true },
+            { data: 'existencias', name: 'existencias', orderable: true, searchable: true },
             { data: 'status', name: 'status', orderable: true, searchable: true },
         ],
         "order": [[ 1, "asc" ]]
         })
     }
     function obtenerproductos(numero){
-        $("#titulomodal").html('Modificaciónes');
+        $("#titulomodal").html('Modificación');
         $.get(obtener_productos,{numero:numero },function(data){
             //se crea al formlario
             var tabs =
@@ -168,37 +171,35 @@
                     '<div class="tab-pane active" id="datosgenerales">'+
                         '<div class="container">'+
                             '<div class="form-group row">'+
-                                '<div class="col-md-1">'+
-                                    '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
-                                    '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
-                                '</div>'+ 
-                                '<div class="col-md-11">'+ 
-                                    '<label>Paquete<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="string" class="form-control" name="paquete" id="txtpaquete" placeholder="Nombre del paquete" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-2">'+
+                                    '<label>Numero<b style="color:#F44336 !important;">*</b></label>'+
+                                    '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+
                                 '</div>'+
-                                '<div class="col-md-2">'+ 
-                                    '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
-                                    '<input type="number" class="form-control" name="cantidad" id="txtcantidad" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-10">'+
+                                    '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+
+                                    '<input type="text" class="form-control" name="producto" id="txtproducto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
-                                '<div class="col-md-4">'+ 
-                                    '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<div class="col-md-6">'+
+                                    '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+
                                     '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
-                                '<div class="col-md-2">'+ 
-                                '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="number" class="form-control" name="existencia" id="txtexistencia" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-6">'+
+                                    '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+
+                                    '<input type="text" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
+                                '</div>'+
                             '</div>'+
-                    '</div>'+    
+                        '</div>'+
+                    '</div>'+
                 '</div>'+
-            '</div>'+ 
-        '</div>';
+            '</div>';
             $("#tabsform").html(tabs);
             console.log(data);//mandas el arreglo
             $("#txtnumero").val(data.productos.id);
-            $("#txtpaquete").val(data.productos.paquete);
-            $("#txtcantidad").val(data.productos.cantidad);
+            $("#txtproducto").val(data.productos.producto);
+            $("#txtfotografia").val(data.productos.fotografia);
             $("#txtprecio").val(data.productos.precio);
-            $("#txtexistencia").val(data.productos.existencia);
+            $("#txtexistencias").val(data.productos.existencias);
+
             mostrarmodalformulario('MODIFICACION', data.permitirmodificacion);
             mostrarformulario();
         }).fail( function() {
@@ -251,7 +252,7 @@ $("#btnGuardarModificacion").on('click', function (e) {
                         "extendedTImeout": "6000"
                     });
                 }
-            }    
+            }
         })
     }else{
         form.parsley().validate();
@@ -263,14 +264,14 @@ function verificarbajaproductos(numero){
             //ID del input que esta dentro del formulario del modal de baja
             $("#num").val();
             //<h5 id="textobaja"></h5> etiqueta dentro del formulario del modal de baja
-            $("#textobaja").html("Se realizo la baja.");
+            $("#textobaja").html("Lo sentimos, este producto esta dada de baja.");
             // id de boton para la baja dentro del formulario del modal de baja
             $("#aceptar").hide();
             // id del div del modal id="estatusregistro"
             $('#estatusregistro').modal('show');
         }else{
             $("#num").val(numero);
-            $("#textobaja").html("¿Esta seguro de dar de baja el producto?");
+            $("#textobaja").html("¿Desea realizar la baja?");
             $("#aceptar").show();
             $('#estatusregistro').modal('show');
         }
@@ -305,7 +306,7 @@ $("#aceptar").on('click', function(e){
                     toastr.error( "No tiene permisos para realizar esta acción, contacta al administrador del sistema", "Mensaje", {
                         "timeOut": "6000",
                         "progressBar": true,
-                        "extendedTImeout": "6000" 
+                        "extendedTImeout": "6000"
                     });
                 }else{
                     toastr.error( "Aviso, estamos experimentando problemas, contacta al administrador del sistema", "Mensaje", {
@@ -321,5 +322,5 @@ $("#aceptar").on('click', function(e){
         form.parsley().validate();
     }
 });
-    
+
 init();

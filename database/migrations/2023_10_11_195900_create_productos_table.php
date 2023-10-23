@@ -1,8 +1,10 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreateProductosTable extends Migration
 {
@@ -15,10 +17,10 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('paquete')->nullable();
-            $table->integer('cantidad')->nullable();
-            $table->double('precio')->nullable();
-            $table->integer('existencia')->nullable();
+            $table->string('producto')->nullable();
+            $table->string('fotografia')->nullable();
+            $table->string('precio',100)->nullable();
+            $table->string('existencias')->nullable();
             $table->string('status',5)->nullable();
             $table->timestamps();
         });
@@ -34,4 +36,3 @@ class CreateProductosTable extends Migration
         Schema::dropIfExists('productos');
     }
 }
-

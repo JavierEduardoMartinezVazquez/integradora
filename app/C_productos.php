@@ -10,10 +10,14 @@ class C_productos extends Model
     protected $table = 'productos';
     protected $primarykey = 'id';
     protected $fillable = [
-        'paquete',
-        'cantidad',
+        'producto',
+        'fotografia',
         'precio',
-        'existencia',
+        'existencias',
         'status'
+
     ];
+    public function users(){
+        return $this->hasMany('App\User');
+    }
 }
