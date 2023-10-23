@@ -64,6 +64,12 @@
                   <li class="nav-item">
                     <a href="{{route('Compras')}}" class="nav-link" id="hol">
                       <i class="nav-icon nav-icon fas fa-star"></i>
+                      <p>Carrito</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('Compras')}}" class="nav-link" id="hol">
+                      <i class="nav-icon nav-icon fas fa-book"></i>
                       <p>Mis Compras</p>
                     </a>
                   </li>
