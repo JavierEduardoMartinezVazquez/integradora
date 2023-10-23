@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Yajra\DataTables\DataTables;
 use App\C_compras;
+use App\C_productos;
 
 use Illuminate\Http\Request;
 
@@ -39,6 +40,24 @@ class ComprasController extends Controller
         $compras->status='ALTA';        
         $compras->save();
         return response()->json($compras);
+    }
+
+    public function agregarAlCarrito(Request $request)
+    {
+        // Recuperar los datos del producto que se agregará al carrito
+        $productoId = $request->input('producto_id');
+        $producto = C_productos::find($productoId);
+
+        // Registro
+        $compra = new C_compras();
+        $compra->producto = $producto->producto;
+        $compra->precio = $producto->precio;
+
+        // Guardar
+        $compra->save();
+
+        // Redirigir
+        return redirect()->route('Compras');
     }
     public function listar_compras (Request $request)
     {

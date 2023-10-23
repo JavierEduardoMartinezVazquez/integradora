@@ -82,6 +82,8 @@ Route::get('obtener_compras', 'ComprasController@obtener_compras')->name('obtene
 Route::post('modificar_compras', 'ComprasController@modificar_compras')->name('modificar_compras');
 Route::get('verificar_baja_compras', 'ComprasController@verificar_baja_compras')->name('verificar_baja_compras');
 Route::post('baja_compras', 'ComprasController@baja_compras')->name('baja_compras');
+Route::post('agregar-al-carrito', 'ComprasController@agregarAlCarrito')->name('agregar.al.carrito');
+
 
 /*---------------Controlador Productos-----------------*/
 Route::get('Productos', 'ProductosController@Productos')->name('Productos');
