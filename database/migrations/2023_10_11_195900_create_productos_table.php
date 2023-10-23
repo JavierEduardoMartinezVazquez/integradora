@@ -20,7 +20,7 @@ class CreateProductosTable extends Migration
             $table->string('producto')->nullable();
             $table->string('descripcionp')->nullable();
             $table->string('fotografia')->nullable();
-            $table->string('precio',100)->nullable();
+            $table->string('precio')->nullable();
             $table->string('existencias')->nullable();
             $table->string('status',5)->nullable();
             $table->timestamps();

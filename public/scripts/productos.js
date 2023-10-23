@@ -69,23 +69,27 @@
                                 '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+
                                 '<input type="text" class="form-control" name="producto" id="txtproducto" placeholder="Nombre del producto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
-                            '<div class="col-md-6">'+
+                            '<div class="col-md-12">'+
                                 '<label>Descripción<b style="color:#F44336 !important;">*</b></label>'+
                                 '<input type="text" class="form-control" name="descripcionp" id="txtdescripcionp" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
                             '<form action = "{{route(control.paginas.productos)}}" method="POST"enctype="multipart/form-data">'+
-                                '<div class="col-md-6">'+
+                                '<div class="col-md-8">'+
                                 '<label>Foto<b style="color:#F44336 !important;">*</b></label>'+
                                 '<input type="file" class="form-control" name="fotografia" id="txtfotografia" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
                                 '</form>'+
-                            '<div class="col-md-6">'+
-                                '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+
+                            '<div class="col-md-1">'+
+                            '<label>Precio</label>'+
+                                '<input class="form-control" type="text" value="$" aria-label="Disabled input example" disabled readonly>'+
+                            '</div>'+
+                            '<div class="col-md-3">'+
+                                '<label><b style="color:#F44336 !important;">*</b></label>'+
                                 '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
-                            '<div class="col-md-6">'+
+                            '<div class="col-md-2">'+
                                 '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+
-                                '<input type="text" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
+                                '<input type="number" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
                             '</div>'+
                         '</div>'+
@@ -184,17 +188,21 @@
                                     '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+
                                     '<input type="text" class="form-control" name="producto" id="txtproducto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
-                                '<div class="col-md-6">'+
+                                '<div class="col-md-8">'+
                                     '<label>Descripción<b style="color:#F44336 !important;">*</b></label>'+
                                     '<input type="text" class="form-control" name="descripcionp" id="txtdescripcionp" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
-                                '<div class="col-md-6">'+
-                                    '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+
-                                    '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
+                                '<div class="col-md-1">'+
+                                    '<label>Precio</label>'+
+                                '<input class="form-control" type="text" value="$" aria-label="Disabled input example" disabled readonly>'+
                                 '</div>'+
-                                '<div class="col-md-6">'+
+                                '<div class="col-md-3">'+
+                                    '<label><b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                                '<div class="col-md-2">'+
                                     '<label>Existencias<b style="color:#F44336 !important;">*</b></label>'+
-                                    '<input type="text" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
+                                    '<input type="number" class="form-control" name="existencias" id="txtexistencias" maxlength="30" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
