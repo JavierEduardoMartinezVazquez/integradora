@@ -11,6 +11,7 @@ class C_productos extends Model
     protected $primarykey = 'id';
     protected $fillable = [
         'producto',
+        'descripcionp',
         'fotografia',
         'precio',
         'existencias',

@@ -48,6 +48,7 @@
                                         <th ><div style="width:90px !important;">Operación</div></th>
                                         <th>#</th>
                                         <th>Producto</th>
+                                        <th>Descripción</th>
                                         <th>Foto del producto</th>
                                         <th>Precio</th>
                                         <th>Existencias</th>

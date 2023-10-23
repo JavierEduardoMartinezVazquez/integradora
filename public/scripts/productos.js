@@ -69,6 +69,10 @@
                                 '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+
                                 '<input type="text" class="form-control" name="producto" id="txtproducto" placeholder="Nombre del producto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
+                            '<div class="col-md-6">'+
+                                '<label>Descripción<b style="color:#F44336 !important;">*</b></label>'+
+                                '<input type="text" class="form-control" name="descripcionp" id="txtdescripcionp" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
                             '<form action = "{{route(control.paginas.productos)}}" method="POST"enctype="multipart/form-data">'+
                                 '<div class="col-md-6">'+
                                 '<label>Foto<b style="color:#F44336 !important;">*</b></label>'+
@@ -153,6 +157,7 @@
             { data: 'operaciones', name: 'operaciones', orderable: false, searchable: false },
             { data: 'id', name: 'id', orderable: true, searchable: true },
             { data: 'producto', name: 'producto', orderable: true, searchable: true },
+            { data: 'descripcionp', name: 'descripcionp', orderable: true, searchable: true },
             { data: 'fotografia', name: 'fotografia', orderable: true, searchable: true },
             { data: 'precio', name: 'precio', orderable: true, searchable: true },
             { data: 'existencias', name: 'existencias', orderable: true, searchable: true },
@@ -180,6 +185,10 @@
                                     '<input type="text" class="form-control" name="producto" id="txtproducto" maxlength="50" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
                                 '<div class="col-md-6">'+
+                                    '<label>Descripción<b style="color:#F44336 !important;">*</b></label>'+
+                                    '<input type="text" class="form-control" name="descripcionp" id="txtdescripcionp" onkeyup="tipoLetra(this);" required>'+
+                                '</div>'+
+                                '<div class="col-md-6">'+
                                     '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+
                                     '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
                                 '</div>'+
@@ -196,6 +205,7 @@
             console.log(data);//mandas el arreglo
             $("#txtnumero").val(data.productos.id);
             $("#txtproducto").val(data.productos.producto);
+            $("#txtdescripcionp").val(data.productos.productdescripcionp);
             $("#txtfotografia").val(data.productos.fotografia);
             $("#txtprecio").val(data.productos.precio);
             $("#txtexistencias").val(data.productos.existencias);

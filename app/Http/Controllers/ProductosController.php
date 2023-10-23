@@ -30,6 +30,7 @@ class ProductosController extends Controller
         $productos = new C_productos;
 
         $productos->producto=$request->producto;
+        $productos->descripcionp=$request->descripcionp;
         if ($request->hasFile('fotografia')){
             $file=$request->file('fotografia');
             $destinationPath = 'img/productosfoto/';
@@ -48,7 +49,7 @@ class ProductosController extends Controller
     public function listar_productos (Request $request)
     {
         if($request->ajax()){
-            $data = C_productos::select('id','producto','precio','fotografia','existencias','status');
+            $data = C_productos::select('id','producto', 'descripcionp','precio','fotografia','existencias','status');
             return DataTables::of($data)
             ->addColumn('fotografia', function ($data) {
                 $url= asset($data->fotografia);
@@ -87,6 +88,7 @@ class ProductosController extends Controller
             //atributo de la Base => $request-> nombre de la caja de texto
             
             'producto'=> $request->producto,
+            'descripcionp'=> $request->descripcionp,
             'precio'=> $request->precio,
             'existencias'=> $request->existencias,
             
