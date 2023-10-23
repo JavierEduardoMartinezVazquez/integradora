@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\C_productos;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
-    }
+{
+    $productos = C_productos::all(); // Obtener todos los productos
+    return view('home', compact('productos'));
+}
+
 }
