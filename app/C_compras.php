@@ -12,11 +12,8 @@ class C_compras extends Model
     protected $fillable = [
         'producto',
         'precio',
+        'cantidadcompra',
         'total',
-        'metodopago',
-        'usuario',
-        'tel',
-        'direccion',
         'status'
     ];
 }

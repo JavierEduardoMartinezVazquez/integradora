@@ -32,11 +32,8 @@ class ComprasController extends Controller
         $compras = new C_compras;
         $compras->producto=$request->producto;
         $compras->precio=$request->precio;
+        $compras->cantidadcompra=$request->cantidadcompra;
         $compras->total=$request->total;
-        $compras->metodopago=$request->metodopago;
-        $compras->usuario=$request->usuario;
-        $compras->tel=$request->tel;
-        $compras->direccion=$request->direccion;
         $compras->status='ALTA';        
         $compras->save();
         return response()->json($compras);
@@ -62,7 +59,7 @@ class ComprasController extends Controller
     public function listar_compras (Request $request)
     {
         if($request->ajax()){
-            $data = C_compras::select('id', 'producto', 'precio', 'total', 'metodopago', 'usuario', 'tel', 'direccion', 'status');
+            $data = C_compras::select('id', 'producto', 'precio', 'cantidadcompra', 'total', 'status');
             return DataTables::of($data)
             ->addColumn('operaciones', function($data){
                 $operaciones = '<div class="container">'.
@@ -97,11 +94,8 @@ class ComprasController extends Controller
             //atributo de la Base => $request-> nombre de la caja de texto
             'producto'=>$request->producto,
             'precio'=>$request->precio,
+            'cantidadcompra'=>$request->cantidadcompra,
             'total'=>$request->total,
-            'metodopago'=>$request->metodopago,
-            'usuario'=>$request->usuario,
-            'tel'=>$request->tel,
-            'direccion'=>$request->direccion
         ]);
         return response()->json($compras);
     }

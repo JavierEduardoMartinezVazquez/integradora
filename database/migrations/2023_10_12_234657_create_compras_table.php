@@ -17,11 +17,8 @@ class CreateComprasTable extends Migration
             $table->bigIncrements('id');
             $table->string('producto')->nullable();
             $table->string('precio')->nullable();
+            $table->string('cantidadcompra')->nullable();
             $table->string('total')->nullable();
-            $table->string('metodopago')->nullable();
-            $table->string('usuario')->nullable();
-            $table->string('tel')->nullable();
-            $table->string('direccion')->nullable();
             $table->string('status',5)->nullable();
             $table->timestamps();
         });

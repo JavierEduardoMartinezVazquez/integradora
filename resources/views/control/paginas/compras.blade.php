@@ -30,7 +30,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h4>Control de Compras</h4>
+                                    <h4>Mis compras</h4>
                                 </div>
                                 <div class="col-md-1">
                                 </div>
@@ -51,11 +51,8 @@
                                         <th>Id</th>
                                         <th>Producto</th>
                                         <th>Precio</th>
+                                        <th>Cantidad</th>
                                         <th>Total</th>
-                                        <th>Metodo de pago</th>
-                                        <th>Usuario</th>
-                                        <th>Tel.</th>
-                                        <th>Direccion</th>
                                         <th>Estatus</th>
                                     </tr>
                                 </thead>

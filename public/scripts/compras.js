@@ -74,24 +74,12 @@
                                 '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
                             '<div class="col-md-4">'+ 
+                            '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
+                                '<input type="number" class="form-control" name="cantidadcompra" id="txtcantidadcompra" onkeyup="tipoLetra(this);" required>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+ 
                                 '<label>Total<b style="color:#F44336 !important;">*</b></label>'+ 
                                 '<input type="text" class="form-control" name="total" id="txttotal" onkeyup="tipoLetra(this);" required>'+
-                            '</div>'+
-                            '<div class="col-md-4">'+ 
-                                '<label>M. Pago<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="text" class="form-control" name="metodopago" id="txtmetodopago" onkeyup="tipoLetra(this);" required>'+
-                            '</div>'+
-                            '<div class="col-md-4">'+ 
-                                '<label>Usuario<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="text" class="form-control" name="usuario" id="txtusuario" onkeyup="tipoLetra(this);" required>'+
-                            '</div>'+
-                            '<div class="col-md-4">'+ 
-                                '<label>Tel.<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="text" class="form-control" name="tel" id="txttel" onkeyup="tipoLetra(this);" required>'+
-                            '</div>'+
-                            '<div class="col-md-8">'+ 
-                                '<label>Direccion<b style="color:#F44336 !important;">*</b></label>'+ 
-                                '<input type="text" class="form-control" name="direccion" id="txtdireccion" onkeyup="tipoLetra(this);" required>'+
                             '</div>'+
                     '</div>'+    
                 '</div>'+
@@ -163,11 +151,8 @@
             { data: 'id', name: 'id', orderable: true, searchable: true },
             { data: 'producto', name: 'producto', orderable: true, searchable: true },
             { data: 'precio', name: 'precio', orderable: true, searchable: true },
+            { data: 'cantidadcompra', name: 'cantidadcompra', orderable: true, searchable: true },
             { data: 'total', name: 'total', orderable: true, searchable: true },
-            { data: 'metodopago', name: 'metodopago', orderable: true, searchable: true },
-            { data: 'usuario', name: 'usuario', orderable: true, searchable: true },
-            { data: 'tel', name: 'tel', orderable: true, searchable: true },
-            { data: 'direccion', name: 'direccion', orderable: true, searchable: true },
             { data: 'status', name: 'status', orderable: true, searchable: true },
         ],
         "order": [[ 1, "asc" ]]
@@ -191,29 +176,17 @@
                             '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+ 
                             '<input type="text" class="form-control" name="producto" id="txtproducto" onkeyup="tipoLetra(this);" required>'+
                         '</div>'+
-                        '<div class="col-md-4">'+ 
+                    '<div class="col-md-4">'+ 
                         '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
                         '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
+                    '</div>'+
+                        '<div class="col-md-4">'+ 
+                        '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
+                        '<input type="number" class="form-control" name="cantidadcompra" id="txtcantidadcompra" onkeyup="tipoLetra(this);" required>'+
                     '</div>'+
                     '<div class="col-md-4">'+ 
                         '<label>Total<b style="color:#F44336 !important;">*</b></label>'+ 
                         '<input type="text" class="form-control" name="total" id="txttotal" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                    '<div class="col-md-4">'+ 
-                        '<label>M. Pago<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="metodopago" id="txtmetodopago" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                    '<div class="col-md-4">'+ 
-                        '<label>Usuario<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="usuario" id="txtusuario" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                    '<div class="col-md-4">'+ 
-                        '<label>Tel.<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="tel" id="txttel" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                    '<div class="col-md-8">'+ 
-                        '<label>Direccion<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="direccion" id="txtdireccion" onkeyup="tipoLetra(this);" required>'+
                     '</div>'+
                     '</div>'+    
                 '</div>'+
@@ -224,11 +197,8 @@
             $("#txtnumero").val(data.compras.id);
             $("#txtproducto").val(data.compras.producto);
             $("#txtprecio").val(data.compras.precio);
+            $("#txtcantidadcompra").val(data.compras.cantidadcompra);
             $("#txttotal").val(data.compras.total);
-            $("#txtmetodopago").val(data.compras.metodopago);
-            $("#txtusuario").val(data.compras.usuario);
-            $("#txttel").val(data.compras.tel);
-            $("#txtdireccion").val(data.compras.direccion);
             mostrarmodalformulario('MODIFICACION', data.permitirmodificacion);
             mostrarformulario();
         }).fail( function() {
