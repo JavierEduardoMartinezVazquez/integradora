@@ -27,10 +27,63 @@
           <link href="css/styless.css" rel="stylesheet" />
         </head>
 
-
+        <style>
+            .imgmodals{
+                text-align: center;
+                height: auto;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto; /* Centrar el contenedor */
+            }
+            .descripcion{
+                color: #FA7A02;
+                font-family: "Arial", sans-serif;
+                font-size: 18px;
+            }
+            .pasos{
+                color: #63320b;
+                font-size: 15px;
+                text-align: left;
+                text-align: justify;
+            }
+            #compra {
+              background-image: url('control/img/pasta2.jpg');
+              background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+              background-repeat: no-repeat; /* Evita que se repita la imagen */
+              position: relative; /* Establece una posición relativa en el contenedor */
+            }
+          
+            #compra::before {
+              content: '';
+              background-color: rgba(0, 0, 0, 0.788); /* Color negro con opacidad (ajusta el último valor para controlar la opacidad) */
+              position: absolute; /* Establece una posición absoluta en la capa de superposición */
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          
+            /* Estilos para los elementos superpuestos */
+            .page-section-heading,
+            .divider-custom,
+            .btn {
+              position: relative; /* Establece una posición relativa en los elementos superpuestos */
+              z-index: 1; /* Asegura que los elementos estén encima de la capa de superposición */
+            }
+            .quienes{
+                    margin-top: 0;
+                    margin-bottom: 0.5rem;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    align-content: center;
+                    font-size: 25px;
+                    color: rgb(75, 33, 7);
+                    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                }
+          </style>
 <body >
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav" style="background-color: #A44F0E">
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav" style="background-color: #683208">
         <div class="container">
           <img src="/control/img/logotipo.png" alt="logo" style="width: 120px" href="#home">
             <a class="navbar-brand" href="#page-top">Sopamex</a>
@@ -39,6 +92,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#page-top">Inicio</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Recetas</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#compra">Compra</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#conocenos">Conocenos</a></li>
@@ -86,13 +140,14 @@
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
             </div>
+            <br>
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                 <!-- Portfolio Item 1-->
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-eye fa-3x"></i></div>
                         </div>
                         <img class="img-fluid" src="control/img/receta1.jpg" alt="..." />
                     </div>
@@ -101,7 +156,7 @@
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-eye fa-3x"></i></div>
                         </div>
                         <img class="img-fluid" src="control/img/receta2.jpg" alt="..." />
                     </div>
@@ -110,7 +165,7 @@
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-eye fa-3x"></i></div>
                         </div>
                         <img class="img-fluid" src="control/img/receta3.jpg" alt="..." />
                     </div>
@@ -118,8 +173,9 @@
             </div>
         </div>
     </section>
+      
     <!-- compra Section-->
-    <section class="page-section text-white mb-0" id="compra" style="background-color: #0c3004">
+    <section class="page-section text-white mb-0" id="compra">
         <div class="container">
             <!-- About Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-white">¿Desea adquirir nuestra pasta?</h2>
@@ -127,13 +183,13 @@
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon">
-                  <img src="control\img\carrito-de-compras.png" style="width: 50px lenght: 50px"></div>
+                  <img src="control\img\carrito-de-compras.png"></div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- About Section Button-->
             <div class="text-center mt-4">
                 <a class="btn btn-xl btn-outline-light" href="/login">
-                    Ir a comprar
+                    Comprar
                 </a>
             </div>
         </div>
@@ -149,12 +205,11 @@
             </div>
 
             <div class="salto"></div>
-            
             <div class="card mb-12" style="max-width: 1300px;">
                 <div class="row g-0">
                     <div class="col-md-7">
                     <div class="card-body" style="background-color:#FEB31E; height: 100%">
-                      <h5 class="card-title" style="align-content: center">¿Quienes somos?</h5>
+                      <div class="quienes">¿Quienes somos?</div>
                       <p class="card-text">Buscamos ser percibidos por los consumidores como un producto que sea capaz de satisfacer su necesidad de tener una alimentacion saludable y el poder de ser una empresa rentable para poder posicionarnos en el mercado nacional</p>
                     </div>
                     </div>
@@ -261,7 +316,7 @@
         <div class="container">
             <div class="row">
                 <!-- Footer -->
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="col-lg-6 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Localización</h4>
                     <p class="lead mb-0">
                         IDGS UTVT<br>
@@ -269,27 +324,23 @@
                     </p>
                 </div>
                 <!-- Footer-->
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                {{-- <div class="col-lg-4 mb-5 mb-lg-0">
+                    mapa
+                </div> --}}
+                <!-- Footer-->
+                <div class="col-lg-6">
                     <h4 class="text-uppercase mb-4">Buscanos</h4>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                </div>
-                <!-- Footer-->
-                <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">Creditos</h4>
-                    <p class="lead mb-0">
-                        Carrera Ingenieria en Desarrollo
-                        <br>y Gestion de Software
-                    </p>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-tiktok"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Copyright-->
     <div class="copyright py-4 text-center text-white" style="background-color: rgb(207, 117, 0)">
-        <div class="container"><small>Copyright 2023 | Proyecto Intregradora</small></div>
+        <div class="container"><small>Copyright 2023 | By Servicios Digitales</small></div>
     </div>
     <!-- Portfolio Modals-->
     <!-- Portfolio Modal 1-->
@@ -307,17 +358,24 @@
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
-                                <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="control/img/receta1.jpg" alt="..." />
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="imgmodals" src="control/img/receta1.jpg" alt="..." />
+                                        
+                                        <div class="salto"></div>
+                                        <div class="descripcion">Pasos para hacer este platillo:
+                                            <div class="pasos">
+                                                <br>
+                                                1.	En una sartén, calienta la mantequilla y fríe el ajo por 1 minuto. Agrega el espagueti cocido y escurrido; cocina por 2 minutos más.
+                                                <br>
+                                                2.	Vierte la Leche Evaporada CARNATION® CLAVEL® con la Media Crema NESTLÉ®, la sal con cebolla y el consomé de pollo; mezcla y cocina hasta que espese ligeramente.
+                                                <br>
+                                                3.	Sirve y decora.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Descripcion: 
-                                    <br>
-                                    1.	En una sartén, calienta la mantequilla y fríe el ajo por 1 minuto. Agrega el espagueti cocido y escurrido; cocina por 2 minutos más.
-                                    <br>
-                                    2.	Vierte la Leche Evaporada CARNATION® CLAVEL® con la Media Crema NESTLÉ®, la sal con cebolla y el consomé de pollo; mezcla y cocina hasta que espese ligeramente.
-                                    <br>
-                                    3.	Sirve y decora.
-                                    </p>
+                                <br>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
                                     Cerrar
@@ -347,19 +405,21 @@
                                 <!-- Portfolio Modal - Image-->
                                 <img class="img-fluid rounded mb-5" src="control/img/receta2.jpg" alt="..." />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Descripcion: 
+                                <div class="descripcion">Pasos para hacer este platillo:
+                                    <div class="pasos">
+                                        <br>
+                                        1.	 Asa los chiles poblanos en el comal o plancha.
+                                        <br>
+                                        2.	Una vez asados, introduce los chiles poblano en una bolsa de plástico y ciérrala para que suden y puedas retirar la piel más fácilmente. Déjalos dentro durante 5 minutos, luego quita la piel, las semillas y las venas de los chiles.
+                                        <br>
+                                        3.	Es el momento de hacer la salsa que dará a la pasta el color verde. Para ello, corta los chiles en cuadros, introdúcelos en la licuadora o recipiente de borde alto, incorpora el ajo, la crema de leche, un poco de consomé al gusto para salar la crema y bátelo todo.
+                                        <br>
+                                        4.	Hecha la salsa, pon una sartén a calentar para cocer los espaguetis con ella, hazlo a fuego medio y añade un poco de mantequilla. Cuando se derrita la mantequilla, vierte la salsa poblana para que se caliente y espese. Después, incorpora los espaguetis y revuélvelo todo bien hasta que adquieran el espesor deseado.
+                                        <br>
+                                        5.	Sirve y decora.
+                                    </div>
+                                </div>
                                 <br>
-                                1.	 Asa los chiles poblanos en el comal o plancha.
-                                <br>
-                                2.	Una vez asados, introduce los chiles poblano en una bolsa de plástico y ciérrala para que suden y puedas retirar la piel más fácilmente. Déjalos dentro durante 5 minutos, luego quita la piel, las semillas y las venas de los chiles.
-                                <br>
-                                3.	Es el momento de hacer la salsa que dará a la pasta el color verde. Para ello, corta los chiles en cuadros, introdúcelos en la licuadora o recipiente de borde alto, incorpora el ajo, la crema de leche, un poco de consomé al gusto para salar la crema y bátelo todo.
-                                <br>
-                                4.	Hecha la salsa, pon una sartén a calentar para cocer los espaguetis con ella, hazlo a fuego medio y añade un poco de mantequilla. Cuando se derrita la mantequilla, vierte la salsa poblana para que se caliente y espese. Después, incorpora los espaguetis y revuélvelo todo bien hasta que adquieran el espesor deseado.
-                                <br>
-                                5.	Sirve y decora.
-
-                                </p>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
                                     Cerrar
@@ -389,15 +449,17 @@
                                 <!-- Portfolio Modal - Image-->
                                 <img class="img-fluid rounded mb-5" src="control/img/receta3.jpg" alt="..." />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-4">Descripcion: 
+                                <div class="descripcion">Pasos para hacer este platillo:
+                                    <div class="pasos">
+                                        <br>
+                                        1.	Hierve el puré de jitomate a fuego lento y añade la crema, la mantequilla y el cubo sazonador. 
+                                        <br>
+                                        2.	Vierte el espagueti en la salsa y mezcla. 
+                                        <br>
+                                        3.	Sirve y decora.
+                                    </div>
+                                </div>
                                 <br>
-                                1.	Hierve el puré de jitomate a fuego lento y añade la crema, la mantequilla y el cubo sazonador. 
-                                <br>
-                                2.	Vierte el espagueti en la salsa y mezcla. 
-                                <br>
-                                3.	Sirve y decora.
-                            </p>
-                                
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
                                     Cerrar
@@ -414,10 +476,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

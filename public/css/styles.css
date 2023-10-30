@@ -547,7 +547,7 @@ progress {
 }
 @media (min-width: 1200px) {
   .display-5 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -11328,7 +11328,7 @@ html {
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height: 2.5rem;
   }
 }
@@ -11519,7 +11519,7 @@ html {
 }
 @media (min-width: 992px) {
   .portfolio-modal .portfolio-modal-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height: 2.5rem;
   }
 }
@@ -11535,13 +11535,17 @@ html {
   background-color: #1a252f;
 }
 texto{
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh; /* Esto asegura que ocupe toda la altura de la ventana */
   margin: 0;
   font-size: 300%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .custom-content {
   padding: 10px;
