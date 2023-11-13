@@ -15,12 +15,20 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'JAVIER EDUARDO',
-            'email' => 'javier.martinez@sopamex.com.mx',
+            'email' => 'al222010046@gmail.com',
             'password' => bcrypt('854620'),
             'rol' => 'Admin',
             'status' => 'ALTA',
             'foto' => 'control\img\usuario.jpg',
         ])->assignRole('Admin');
+        User::create([
+            'name' => 'ZAYDA HASIEL',
+            'email' => 'al222010575@gmial.com',
+            'password' => bcrypt('854620'),
+            'rol' => 'Admin',
+            'status' => 'ALTA',
+            'foto' => 'control\img\usuario.jpg',
+        ])->assignRole('Usuar');
 
     }
 }
