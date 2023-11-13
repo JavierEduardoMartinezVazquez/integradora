@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         ])->assignRole('Admin');
         User::create([
             'name' => 'ZAYDA HASIEL',
-            'email' => 'al222010575@gmial.com',
+            'email' => 'al222010575@gmail.com',
             'password' => bcrypt('854620'),
             'rol' => 'Admin',
             'status' => 'ALTA',
