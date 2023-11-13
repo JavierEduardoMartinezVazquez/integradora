@@ -71,12 +71,16 @@
                                             </div>
                                         </div>
                                         <a class="btn btn-link" href="{{ route('register') }}">Registrate</a>
-                                    </div> 
+                                        </div> 
                                      @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
                                     @endif
+                                    <br>
+                                    <a class="btn btn-link" href="{{ url('/') }}">
+                                        Volver
+                                    </a>
                                 </form>
                             </div>
                         </div>

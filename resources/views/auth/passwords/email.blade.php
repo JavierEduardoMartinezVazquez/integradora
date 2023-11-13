@@ -73,6 +73,9 @@
                                             </button>
                                         </div>
                                     </div>
+                                    <a class="btn btn-link" href="{{ route('login') }}">
+                                        Volver
+                                    </a>
                                 </form>
                             </div>
                         </div>
