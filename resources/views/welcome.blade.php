@@ -248,7 +248,7 @@
             </div>
     </section>
     <!-- Contact Section-->
-    <section class="page-section" id="contact">
+{{--     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contactanos</h2>
@@ -310,30 +310,50 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Footer-->
-    <footer class="footer text-center">
+    <footer class="footer text-center"  id="contact">
         <div class="container">
             <div class="row">
-                <!-- Footer -->
+                {{-- <!-- Footer -->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    
+                </div>
+                <!-- Footer--> --}}
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Localización</h4>
-                    <p class="lead mb-0">
-                        IDGS UTVT<br>
-                        Atarasquillo-Capuluac
-                    </p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7534.92094055297!2d-99.47623126084062!3d19.218753559003687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sParque%20Industrial%20PYMES%2C%20Km.%209.5%20Carr.%20Santiago%20Tianguistenco-Ocoyoacac%20Calle%20Industrial%20Bodega%2010.%20Col.%20Agua%20blanca.%20Capulhuac!5e0!3m2!1ses-419!2smx!4v1700241355724!5m2!1ses-419!2smx" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <!-- Footer-->
-                {{-- <div class="col-lg-4 mb-5 mb-lg-0">
-                    mapa
-                </div> --}}
-                <!-- Footer-->
                 <div class="col-lg-6">
+                    <style>
+                        .contactofooter{
+                            color: #ffffff;
+                            font-size: 16px;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                            text-align: center;
+                            line-height: 1.5;
+                            word-spacing: 2px;
+                        }
+                    </style>
+                    <h4 class="text-uppercase mb-4">Correo</h4>
+                    <p class="contactofooter"> 
+                        sopamex07@gmail.com
+                    <br>
+                    <h4 class="text-uppercase mb-4">Telefono</h4>
+                    <p class="contactofooter"> 
+                        (722) 862 6868 
+                    </p>
+                    <h4 class="text-uppercase mb-4">Dirección</h4>
+                    <p class="contactofooter"> 
+                        Parque Industrial PYMES, Km. 9.5 Carr. <br> Santiago Tianguistenco-Ocoyoacac Calle Industrial <br>Bodega 10. Col. Agua blanca. Capulhuac, México. CP 52700. 
+                    </p>
+                    <div class="salto"/>
                     <h4 class="text-uppercase mb-4">Buscanos</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://web.facebook.com/people/Sopa-Mex/pfbid0S2dXwe6iwAWkz933TjkZnmVy4roVB6TxWE7hasMUYEYdPhs7qxW2jyGsKVKQ4Yt3l/?mibextid=ZbWKwL"><i class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-tiktok"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/sopamex_biotecnology/?igshid=NzZlODBkYWE4Ng%3D%3D"><i class="fab fa-fw fa-instagram"></i></a>
                 </div>
             </div>
         </div>
