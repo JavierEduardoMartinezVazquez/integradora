@@ -101,35 +101,17 @@
             </div>
         </div>
     </nav>
-<section>
-    <div class="py-1" style="background-color: rgb(201, 110, 0)">
-        <div class="container">
-        </div>
-    </div>
-</section>
+
+    <!-- Masthead-->
+    </section>
     <div class="py-1" style="background-color: rgb(201, 110, 0)">
         <div class="container">
         </div>
     </div>
     <!-- Masthead-->
     <section class="page-top portfolio" id="page-top">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" id="#home">
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 680px" >
-                <img src="/control/img/PastaFondoNegro.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div class="container align-items-center">
-                    <!-- Masthead Heading-->
-                    <texto>
-                        Sopa Quiga
-                        <br> 
-                        "La mejor sopa de México..."
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</section>
+                <img src="/control/img/PastaFondoNegro.jpg" class="img-fluid" alt="..." style="margin-top: 70px">
+    </section>
     
     <!-- Portfolio Section-->
     <section class="page-section portfolio" id="portfolio">
@@ -352,7 +334,7 @@
                     <h4 class="text-uppercase mb-4">Buscanos</h4>
                     <a class="btn btn-outline-light btn-social mx-1" href="https://web.facebook.com/people/Sopa-Mex/pfbid0S2dXwe6iwAWkz933TjkZnmVy4roVB6TxWE7hasMUYEYdPhs7qxW2jyGsKVKQ4Yt3l/?mibextid=ZbWKwL"><i class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-tiktok"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://vm.tiktok.com/ZMjwXETUX/"><i class="fab fa-fw fa-tiktok"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/sopamex_biotecnology/?igshid=NzZlODBkYWE4Ng%3D%3D"><i class="fab fa-fw fa-instagram"></i></a>
                 </div>
             </div>
