@@ -1,13 +1,10 @@
 @extends('plantilla')
 @section('titulo')
-    - Home - Tienda
+    - Tienda
 @endsection
     @section('additionals_css')
 @endsection
 @section('content')
-<style>
-
-</style>
 
 
     <div class="content-wrapper">

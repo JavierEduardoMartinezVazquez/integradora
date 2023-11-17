@@ -9,7 +9,7 @@
         </div>
       </div>
 <!--ADMINISTRADOR -->
-@can('User')
+
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
@@ -17,6 +17,7 @@
               <i class="nav-icon fas fa-store"></i>
               <p>Tienda</p>
             </a>
+            @can('User')
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview">
                 <a class="nav-link">
