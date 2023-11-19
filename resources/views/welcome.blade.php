@@ -85,7 +85,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav" style="background-color: #683208">
         <div class="container">
-          <img src="/control/img/logotipo.png" alt="logo" style="width: 120px" href="#home">
+          <img src="control/img/logotipo.png" alt="logo" style="width: 120px" href="#home">
             <a class="navbar-brand" href="#page-top">Sopamex</a>
             <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(231, 119, 15)">
                 <i class="fas fa-bars"></i>
@@ -110,7 +110,7 @@
     </div>
     <!-- Masthead-->
     <section class="page-top portfolio" id="page-top">
-                <img src="/control/img/PastaFondoNegro.jpg" class="img-fluid" alt="..." style="margin-top: 70px">
+                <img src="control/img/PastaFondoNegro.jpg" class="img-fluid" alt="..." style="margin-top: 70px">
     </section>
     
     <!-- Portfolio Section-->
