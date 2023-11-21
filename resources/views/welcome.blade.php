@@ -170,7 +170,7 @@
             </div>
             <!-- About Section Button-->
             <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-light" href="/login">
+                <a class="btn btn-xl btn-outline-light" href="login">
                     Comprar
                 </a>
             </div>
