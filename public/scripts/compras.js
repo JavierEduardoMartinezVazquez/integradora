@@ -168,25 +168,9 @@
                     '<div class="tab-pane active" id="datosgenerales">'+
                         '<div class="container">'+
                             '<div class="form-group row">'+
-                            '<div class="col-md-1">'+
-                            '<label>ID:<b style="color:#F44336 !important;">*</b></label>'+                             
-                            '<input type="text" class="form-control" name="numero" id="txtnumero" required  readonly>'+ 
-                        '</div>'+
-                        '<div class="col-md-7">'+ 
-                            '<label>Producto<b style="color:#F44336 !important;">*</b></label>'+ 
-                            '<input type="text" class="form-control" name="producto" id="txtproducto" onkeyup="tipoLetra(this);" required>'+
-                        '</div>'+
-                    '<div class="col-md-4">'+ 
-                        '<label>Precio<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="precio" id="txtprecio" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                        '<div class="col-md-4">'+ 
-                        '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="number" class="form-control" name="cantidadcompra" id="txtcantidadcompra" onkeyup="tipoLetra(this);" required>'+
-                    '</div>'+
-                    '<div class="col-md-4">'+ 
-                        '<label>Total<b style="color:#F44336 !important;">*</b></label>'+ 
-                        '<input type="text" class="form-control" name="total" id="txttotal" onkeyup="tipoLetra(this);" required>'+
+                            '<div class="col-md-4">'+ 
+                            '<label>Cantidad<b style="color:#F44336 !important;">*</b></label>'+ 
+                            '<input type="number" class="form-control" name="cantidadcompra" id="txtcantidadcompra" onkeyup="tipoLetra(this);" required>'+
                     '</div>'+
                     '</div>'+    
                 '</div>'+
@@ -257,20 +241,43 @@ $("#btnGuardarModificacion").on('click', function (e) {
         form.parsley().validate();
     }
 });
+function eliminarCompra(compraId) {
+    // Confirmar con el usuario antes de eliminar
+    if (confirm("¿Estás seguro de que deseas eliminar esta compra?")) {
+        // Realizar la petición AJAX para eliminar la compra
+        $.ajax({
+            type: 'POST',
+            url: '/eliminar-compra', // Ruta en la que manejas la eliminación en tu controlador
+            data: {
+                _token: '{{ csrf_token() }}', // Asegúrate de incluir el token CSRF en la petición
+                compra_id: compraId
+            },
+            success: function(response) {
+                // Manejar la respuesta del servidor (puede ser redireccionar a la página de compras, actualizar la interfaz, etc.)
+                console.log(response);
+                // Por ejemplo, recargar la página después de la eliminación
+                location.reload();
+            },
+            error: function(error) {
+                console.error('Error al eliminar la compra:', error);
+            }
+        });
+    }
+}
 function verificarbajacompras(numero){
     $.get(verificar_baja_compras, {numero:numero}, function(data){
         if(data.status == 'BAJA'){
             //ID del input que esta dentro del formulario del modal de baja
             $("#num").val();
             //<h5 id="textobaja"></h5> etiqueta dentro del formulario del modal de baja
-            $("#textobaja").html("El horario ya fue dado de baja.");
+            $("#textobaja").html("El producto ya fue dado de baja.");
             // id de boton para la baja dentro del formulario del modal de baja
             $("#aceptar").hide();
             // id del div del modal id="estatusregistro"
             $('#estatusregistro').modal('show');
         }else{
             $("#num").val(numero);
-            $("#textobaja").html("¿Esta seguro de dar de baja el horario?");
+            $("#textobaja").html("¿Esta seguro?");
             $("#aceptar").show();
             $('#estatusregistro').modal('show');
         }

@@ -6,11 +6,13 @@
 @endsection
 @section('content')
 
-
+<body>
     <div class="content-wrapper">
         <section class="content">
             <div class="row">
                 <div class="card-body">
+                    <div class="card p-5">
+                    <h3><i class="nav-icon fas fa-store"></i>  Tienda Sopamex</h3>
                     <div class="row row-cols-1 row-cols-md-3 g-4"">
                         @foreach ($productos as $producto)
                         <div class="col-md-4">
@@ -23,6 +25,8 @@
                                     <form method="POST" action="{{ route('agregar.al.carrito') }}">
                                         @csrf
                                         <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                        <label>Cantidad:</label>
+                                        <input type="number" name="quantity" value="1" min="1">
                                         <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
                                     </form>
                                 </div>
@@ -30,9 +34,11 @@
                         </div>
                         @endforeach
                     </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </body>
+
 @endsection

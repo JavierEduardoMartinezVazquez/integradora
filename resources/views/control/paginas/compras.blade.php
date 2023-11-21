@@ -29,17 +29,23 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-sm-8">
-                                    <h4>Mis compras</h4>
+                                <div class="col-sm-7">
+                                    <h4><i class="nav-icon fas fa-shopping-cart"></i>  Carrito de compras</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h5>Total del carrito:</h5>
+                                    <div class="col-4">
+                                        <div class="card">$     .00</div>
+                                    </div>
+                                </div> 
+                                <div class="col-md-1">
+                                    <a href="{{ route('home') }}" class="btn btn-secondary">Volver a tienda</a>
                                 </div>
                                 <div class="col-md-1">
+                                    <a href="{{ route('VaciarCarrito') }}" class="btn btn-danger">Vaciar Carrito</a>
                                 </div>
                                 <div class="col-md-1">
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-1">
-                                    <button type="submit" class="btn btn-success" onclick="alta()">Agregar</button>
+                                    <a href="{{ url('recibo_pdf') }}" class="btn btn-success">Finalizar compra</a>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +53,7 @@
                             <table id="tablelist" class=" tablelist table table-bordered table-striped display nowrap">
                                 <thead>
                                     <tr>
-                                        <th ><div style="width:90px !important;">Operación </div></th>
+                                        <th><div style="width:90px !important;">Operación </div></th>
                                         <th>Id</th>
                                         <th>Producto</th>
                                         <th>Precio</th>
@@ -67,12 +73,12 @@
     @include('control.modal.modal_baja')
 @endsection
 @section('additionals_js')
-    <script>
+    {{-- <script>
     //detectar cuando en el input de buscar por codigo de producto el usuario presione la tecla enter, si es asi se realizara la busqueda con el codigo escrito
         $(document).ready(function(){
         $("#hor").addClass('active');
         });
-    </script>
+    </script> --}}
     <script>
         var obtener_ultimo_id_compras = '{!!URL::to('obtener_ultimo_id_compras')!!}';
         var guardar_compras = '{!!URL::to('guardar_compras')!!}';

@@ -282,7 +282,7 @@ function verificarbajaproductos(numero){
             //ID del input que esta dentro del formulario del modal de baja
             $("#num").val();
             //<h5 id="textobaja"></h5> etiqueta dentro del formulario del modal de baja
-            $("#textobaja").html("Lo sentimos, este producto esta dada de baja.");
+            $("#textobaja").html("Lo sentimos, este producto esta dado de baja.");
             // id de boton para la baja dentro del formulario del modal de baja
             $("#aceptar").hide();
             // id del div del modal id="estatusregistro"

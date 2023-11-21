@@ -293,14 +293,14 @@ function verificarbajaventas(numero){
             //ID del input que esta dentro del formulario del modal de baja
             $("#num").val();
             //<h5 id="textobaja"></h5> etiqueta dentro del formulario del modal de baja
-            $("#textobaja").html("El horario ya fue dado de baja.");
+            $("#textobaja").html("Ya fue dada de baja.");
             // id de boton para la baja dentro del formulario del modal de baja
             $("#aceptar").hide();
             // id del div del modal id="estatusregistro"
             $('#estatusregistro').modal('show');
         }else{
             $("#num").val(numero);
-            $("#textobaja").html("¿Esta seguro de dar de baja el horario?");
+            $("#textobaja").html("¿Esta seguro de realizar esta baja?");
             $("#aceptar").show();
             $('#estatusregistro').modal('show');
         }
