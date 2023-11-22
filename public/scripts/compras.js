@@ -154,6 +154,8 @@
             { data: 'cantidadcompra', name: 'cantidadcompra', orderable: true, searchable: true },
             { data: 'total', name: 'total', orderable: true, searchable: true },
             { data: 'status', name: 'status', orderable: true, searchable: true },
+            { data: 'total_final', name: 'total_final', orderable: false, searchable: false },
+
         ],
         "order": [[ 1, "asc" ]]
         })

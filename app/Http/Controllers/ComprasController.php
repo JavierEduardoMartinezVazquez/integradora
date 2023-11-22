@@ -80,13 +80,23 @@ class ComprasController extends Controller
     {
         if($request->ajax()){
             $data = C_compras::select('id', 'producto', 'precio', 'cantidadcompra', 'total', 'status');
-            return DataTables::of($data)
+             // Filtrar por status 'ALTA'
+        $data->where('status', 'ALTA');
+
+        // Calcular el valor total final
+        $totalFinal = $data->sum('total');
+
+        // Devolver el valor total final como parte de la respuesta
+        return DataTables::of($data)
+            ->addColumn('total_final', function () use ($totalFinal) {
+                return number_format($totalFinal, 2); // Formatear el total final según tus necesidades
+            })
             ->addColumn('operaciones', function($data){
                 $operaciones = '<div class="container">'.
                                     '<div class="row">'.
                                             /* '<div class="col"><a href="javascript:void(0);" onclick="obtenercompras('.$data->id.')"><i class="fas fa-pen-square" aria-hidden="true"></i></a></div>'. */
                                             /* '<div class="col"><a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')"></i></a></div>'. */
-                                            /* '<div class="col"><a class="paddingmenuopciones" href="'.route('recibo_pdf',$data->id).'" target="_blank"><i class="botton btn link" aria-hidden="true">Eliminar</i></a></div>'. */
+                                           /*  '<a class="paddingmenuopciones" href="'.route('recibo_pdf',$data->id).'" target="_blank"><div class="btn btn-success" aria-hidden="true">Recibo</div></a></div>'. */
                                             /* '<div class="col"><a class="paddingmenuopciones" href="'.url('EliminarDelCarrito').'" target="_blank"><i class="botton btn link" aria-hidden="true">Eliminar</i></a></div>'.*/
                                             '<a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')">Eliminar</a>'.
                                         '</div>'.
@@ -97,6 +107,17 @@ class ComprasController extends Controller
             ->make(true);
         }
     }
+
+    public function mostrarVistaConTotal()
+    {
+        // Obtener el valor total de los registros con status 'ALTA'
+        $totalFinal = C_compras::where('status', 'ALTA')->sum('total');
+        dd($totalFinal);
+
+        // Puedes pasar el valor total a la vista como una variable
+        return view('control.paginas.compras')->with('totalFinal', $totalFinal);
+    }
+
     
     public function recibo_pdf($user_id){
         //dd($user_id);

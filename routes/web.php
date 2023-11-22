@@ -88,7 +88,11 @@ Route::post('baja_compras', 'ComprasController@baja_compras')->name('baja_compra
 Route::post('agregar-al-carrito', 'ComprasController@agregarAlCarrito')->name('agregar.al.carrito');
 Route::get('vaciar-carrito', 'ComprasController@vaciarCarrito')->name('VaciarCarrito');
 Route::get('recibo_pdf/{user_id}', 'ComprasController@recibo_pdf')->name('recibo_pdf');
-Route::get('/obtener-suma-total', 'ComprasController@obtenerSumaTotal')->name('obtener-suma-total');
+Route::get('/mostrar-vista-con-total', 'ComprasController@mostrarVistaConTotal');
+
+
+Route::get('miscompras', 'MiscomprasController@miscompras')->name('miscompras');
+
 
 
 
