@@ -52,16 +52,15 @@
                     </a>
                   </li>
                   @endcan
-                </ul>{{-- 
+                </ul>
+                @can('Usuar')
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview">
-                <a class="nav-link">
+                <a href="{{route('Compras')}}" class="nav-link">
                   <i class="nav-icon fas fa-shopping-cart"></i>
-                  <p>Carrito
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
+                  <p>Carrito</p>
                 </a>
-                <ul class="nav nav-treeview"> --}}
+                {{-- <ul class="nav nav-treeview">
                 @can('Usuar')
                   <li class="nav-item">
                     <a href="{{route('Compras')}}" class="nav-link" id="hol">
@@ -69,7 +68,7 @@
                       <p>Carrito</p>
                     </a>
                   </li>
-                  @endcan
+                  @endcan --}}
                   {{-- <li class="nav-item">
                     <a href="{{route('Compras')}}" class="nav-link" id="hol">
                       <i class="nav-icon nav-icon fas fa-book"></i>
@@ -77,6 +76,7 @@
                     </a>
                   </li> --}}
                       </ul>
+                      @endcan
                         {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
