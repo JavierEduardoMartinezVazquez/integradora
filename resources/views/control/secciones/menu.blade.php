@@ -35,6 +35,15 @@
                     </a>
                   </li>
                   @endcan
+                  
+                  @can('User')
+                  <li class="nav-item">
+                    <a href="{{route('Productos')}}" class="nav-link" id="">
+                    <i class="nav-icon nav-icon fas fa-eye"></i>
+                      <p>Productos</p>
+                    </a>
+                  </li>
+                @endcan
                   @can('User')
                   <li class="nav-item">
                     <a href="{{route('Ventas')}}" class="nav-link" id="">
@@ -43,15 +52,7 @@
                     </a>
                   </li>
                   @endcan
-                  @can('User')
-                  <li class="nav-item">
-                    <a href="{{route('Productos')}}" class="nav-link" id="">
-                    <i class="nav-icon nav-icon fas fa-eye"></i>
-                      <p>Productos</p>
-                    </a>
-                  </li>
-                </ul>
-                @endcan{{-- 
+                </ul>{{-- 
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview">
                 <a class="nav-link">
@@ -61,13 +62,14 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview"> --}}
-                
+                @can('Usuar')
                   <li class="nav-item">
                     <a href="{{route('Compras')}}" class="nav-link" id="hol">
                       <i class="nav-icon nav-icon fas fa-shopping-cart"></i>
                       <p>Carrito</p>
                     </a>
                   </li>
+                  @endcan
                   {{-- <li class="nav-item">
                     <a href="{{route('Compras')}}" class="nav-link" id="hol">
                       <i class="nav-icon nav-icon fas fa-book"></i>
