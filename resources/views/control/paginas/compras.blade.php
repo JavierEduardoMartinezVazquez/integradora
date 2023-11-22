@@ -29,23 +29,18 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <p>Total Final: ${{ $totalFinal ?? '' }}</p>
-
-                                <div class="col-sm-7">
+                                <div class="col-sm-8">
                                     <h4><i class="nav-icon fas fa-shopping-cart"></i>  Carrito de compras</h4>
                                 </div>
                                 <div class="col-md-2">
-                                    <h5>Total del carrito:</h5>
-                                    <div class="col-4">
-                                        <div class="card">$     .00</div>
-                                    </div>
+{{--                                     <div>Total Final: {{ isset($totalFinal) ? number_format($totalFinal, 2) : '' }}</div>    --}}
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <a href="{{ route('home') }}" class="btn btn-secondary">Volver</a>
                               
                                     <a href="{{ route('VaciarCarrito') }}" class="btn btn-danger">Vaciar</a>
                                
-                                    <a href="{{ url('recibo_pdf') }}" class="btn btn-success">Pagar</a>
+                                    {{-- <a href="{{ url('recibo_pdf') }}" class="btn btn-success">Pagar</a> --}}
                             </div>
                         </div>
                         <div class="card-body table-responsive">
