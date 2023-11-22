@@ -87,7 +87,7 @@ Route::get('verificar_baja_compras', 'ComprasController@verificar_baja_compras')
 Route::post('baja_compras', 'ComprasController@baja_compras')->name('baja_compras');
 Route::post('agregar-al-carrito', 'ComprasController@agregarAlCarrito')->name('agregar.al.carrito');
 Route::get('vaciar-carrito', 'ComprasController@vaciarCarrito')->name('VaciarCarrito');
-Route::get('recibo_pdf/{user_id}', 'ComprasController@recibo_pdf')->name('recibo_pdf');
+Route::get('recibo_pdf/{productoId}', 'ComprasController@recibo_pdf')->name('recibo_pdf');
 Route::get('/mostrar-vista-con-total', 'ComprasController@mostrarVistaConTotal');
 
 

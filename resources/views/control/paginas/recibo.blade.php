@@ -69,20 +69,20 @@
 				</tr>
                 <tr>
 					<td>
-					prod{{ $user->id }}.................................................
+					{{ $compra->producto }}..................
 					<td>
-						Cant{{ $user->nss }}
+						{{ $compra->cantidadcompra }}
 					</td>
 					<td></td>
 					<td>
-						$$$
+						${{ $compra->total }}.00
 					</td>
                 </tr>     
 				<tr>
 					<td>Total</td>
 					<td></td>
 					<td></td>
-					<td>${{ $user->puesto }}.00</td>
+					<td>${{ $compra->total }}</td>
 				</tr>       
             </table>
 		</div>
@@ -90,7 +90,7 @@
 		<h5 class="name">Codigo de pago</h5>
         <div style="codi">
 			<center>
-			{!! DNS1D::getBarcodeHTML("$user->id", 'C128', 3) !!}
+			{!! DNS1D::getBarcodeHTML("$compra->id", 'C128', 3) !!}
 		</div>
 			<div class="letra">
 				<center>

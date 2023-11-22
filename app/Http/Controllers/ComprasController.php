@@ -109,23 +109,13 @@ class ComprasController extends Controller
         return view('control.paginas.compras', compact('totalFinal'));
     }
 
-    public function mostrarVistaConTotal()
-    {
-        // Obtener el valor total de los registros con status 'ALTA'
-        $totalFinal = C_compras::where('status', 'ALTA')->sum('total');
-        dd($totalFinal);
-
-        // Puedes pasar el valor total a la vista como una variable
-        return view('control.paginas.compras')->with('totalFinal', $totalFinal);
-    }
-
     
-    public function recibo_pdf($user_id){
+    public function recibo_pdf($productoId){
         //dd($user_id);
         $customPaper = array(0,0,325.00,394.00);
 
-        $user = User::find($user_id);
-        $pdf = PDF::loadView('control.paginas.recibo', compact('user'))
+        $compra = C_compras::find($productoId);
+        $pdf = PDF::loadView('control.paginas.recibo', compact('compra'))
         ->setPaper($customPaper);
         //->setOption('margin-left', 2)
         //->setOption('margin-right', 2)
