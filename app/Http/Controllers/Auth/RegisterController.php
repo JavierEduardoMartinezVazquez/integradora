@@ -69,7 +69,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'rol' => 'Usuar', // Valor por defecto para el campo 'rol'
-            'foto' => 'control\img\usuario.jpg', // Valor por defecto para el campo 'foto'
-        ]);
+            'foto' => 'control\img\usuario.jpg', 
+            // Valor por defecto para el campo 'foto'
+        ])->assignRole('Usuar');
     }
 }
