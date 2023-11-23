@@ -89,7 +89,7 @@ class ComprasController extends Controller
         // Devolver el valor total final como parte de la respuesta
         return DataTables::of($data)
             ->addColumn('total_final', function () use ($totalFinal) {
-                return number_format($totalFinal, 2); // Formatear el total final según tus necesidades
+                return "$".number_format($totalFinal, 2); // Formatear el total final según tus necesidades
             })
             ->addColumn('operaciones', function($data){
                 $operaciones = '<div class="container">'.
