@@ -110,7 +110,7 @@ class ComprasController extends Controller
             ->rawColumns(['operaciones'])
             ->make(true);
         }
-        return view('control.paginas.compras');
+        return view('control.paginas.compras'); 
     }
 
 
@@ -126,6 +126,7 @@ class ComprasController extends Controller
         //->setOption('margin-bottom', 10);
         return $pdf->stream();
     }
+    
 
 
     public function recibo_pdf2()
