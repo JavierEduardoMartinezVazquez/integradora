@@ -243,6 +243,12 @@ $("#btnGuardarModificacion").on('click', function (e) {
         form.parsley().validate();
     }
 });
+ function recargarVista() {
+    // Recarga la vista actual después de un breve período de tiempo (puedes ajustar el valor en milisegundos según tus necesidades)
+    setTimeout(function() {
+      location.reload();
+    }, 1000);
+  }
 function eliminarCompra(compraId) {
     // Confirmar con el usuario antes de eliminar
     if (confirm("¿Estás seguro de que deseas eliminar esta compra?")) {

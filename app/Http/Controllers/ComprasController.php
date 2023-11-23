@@ -100,7 +100,7 @@ class ComprasController extends Controller
                                     /* '<div class="row">'. */
                                             /* '<div class="col"><a href="javascript:void(0);" onclick="obtenercompras('.$data->id.')"><i class="fas fa-pen-square" aria-hidden="true"></i></a></div>'. */
                                             /* '<div class="col"><a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')"></i></a></div>'. */
-                                           '<a class="paddingmenuopciones" href="'.route('recibo_pdf2',$data->id).'" target="_blank"><div class="btn btn-success" aria-hidden="true">Pagar</div></a>'.
+                                           '<a class="paddingmenuopciones" href="'.route('recibo_pdf2',$data->id).'" target="_blank" onclick="recargarVista()"><div class="btn btn-success" aria-hidden="true">Pagar</div></a>'.
                                             /* '<div class="col"><a class="paddingmenuopciones" href="'.url('EliminarDelCarrito').'" target="_blank"><i class="botton btn link" aria-hidden="true">Eliminar</i></a></div>'.*/
                                             '<a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')">Eliminar</a>'.
                                         /* '</div>'. */
