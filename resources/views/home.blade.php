@@ -22,12 +22,12 @@
                                     <h5 class="card-title">{{ $producto->producto }}</h5>
                                     <p class="card-text">{{ $producto->descripcionp }}</p>
                                     <p class="card-text">$ {{ $producto->precio }} .00</p>
+                                    @can('Usuar')
                                     <form method="POST" action="{{ route('agregar.al.carrito') }}">
                                         @csrf
                                         <input type="hidden" name="producto_id" value="{{ $producto->id }}">
                                         <label>Cantidad:</label>
                                         <input type="number" name="quantity" value="1" min="1">
-                                        @can('Usuar')
                                         <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
                                         @endcan
                                     </form>
