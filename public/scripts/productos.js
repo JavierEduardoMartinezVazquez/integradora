@@ -81,7 +81,7 @@
                                 '</form>'+
                             '<div class="col-md-1">'+
                             '<label>Precio</label>'+
-                                '<input class="form-control" type="text" value="$" aria-label="Disabled input example" disabled readonly>'+
+                                '<input class="form-control" type="text" value="$" aria-label="Disabled input example" disabled>'+
                             '</div>'+
                             '<div class="col-md-3">'+
                                 '<label><b style="color:#F44336 !important;">*</b></label>'+

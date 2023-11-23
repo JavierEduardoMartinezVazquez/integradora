@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'rol' => 'Usuar', // Valor por defecto para el campo 'rol'
             'foto' => 'control\img\usuario.jpg', 
+            'status' => 'ALTA'
             // Valor por defecto para el campo 'foto'
         ])->assignRole('Usuar');
     }
