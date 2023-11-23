@@ -10,6 +10,12 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
+
+    public function C_compras()
+    {
+        return $this->hasMany(C_compras::class);
+    }
+    
     use HasRoles;
     use Notifiable;
 

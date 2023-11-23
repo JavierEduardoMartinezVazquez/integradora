@@ -20,7 +20,7 @@ class ComprasController extends Controller
         if(sizeof($ultimoNumeroTabla) == 0 || sizeof($ultimoNumeroTabla) == "" || sizeof($ultimoNumeroTabla) == null){
             $id = 1;
         }else{
-            $id = $ultimoNumeroTabla[0]->id+1;   
+            $id = $ultimoNumeroTabla[0]->id+1;
         }
         return response()->json($id);
     }
@@ -36,7 +36,7 @@ class ComprasController extends Controller
         $compras->precio=$request->precio;
         $compras->cantidadcompra=$request->cantidadcompra;
         $compras->total=$request->total;
-        $compras->status='ALTA';        
+        $compras->status='ALTA';
         $compras->save();
         return response()->json($compras);
     }
@@ -59,6 +59,7 @@ class ComprasController extends Controller
         $compra->precio = $producto->precio;
         $compra->cantidadcompra = $cantidadcompra; // Asignar la cantidad
         $compra->total=$total;
+        $compra->usuario_id=auth()->user()->id;
         $compra->status="ALTA";
         // Guardar
         $compra->save();
@@ -70,17 +71,20 @@ class ComprasController extends Controller
     {
         // Eliminar todas las compras
         C_compras::truncate();
-    
+
         // Redirigir a la página de compras
         return redirect()->route('Compras')->with('success', 'Carrito vacio');;
     }
-    
+
 
     public function listar_compras (Request $request)
     {
+        $usuario = auth()->user();
+
         if($request->ajax()){
             $data = C_compras::select('id', 'producto', 'precio', 'cantidadcompra', 'total', 'status');
-             // Filtrar por status 'ALTA'
+        //      // Filtrar por status 'ALTA'
+        $data->where('usuario_id', $usuario->id);
         $data->where('status', 'ALTA');
 
         // Calcular el valor total final
@@ -96,7 +100,7 @@ class ComprasController extends Controller
                                     /* '<div class="row">'. */
                                             /* '<div class="col"><a href="javascript:void(0);" onclick="obtenercompras('.$data->id.')"><i class="fas fa-pen-square" aria-hidden="true"></i></a></div>'. */
                                             /* '<div class="col"><a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')"></i></a></div>'. */
-                                           '<a class="paddingmenuopciones" href="'.route('recibo_pdf',$data->id).'" target="_blank"><div class="btn btn-success" aria-hidden="true">Pagar</div></a>'.
+                                           '<a class="paddingmenuopciones" href="'.route('recibo_pdf2',$data->id).'" target="_blank"><div class="btn btn-success" aria-hidden="true">Pagar</div></a>'.
                                             /* '<div class="col"><a class="paddingmenuopciones" href="'.url('EliminarDelCarrito').'" target="_blank"><i class="botton btn link" aria-hidden="true">Eliminar</i></a></div>'.*/
                                             '<a href="javascript:void(0);" class="btn btn-danger" onclick="verificarbajacompras('.$data->id.')">Eliminar</a>'.
                                         /* '</div>'. */
@@ -106,10 +110,10 @@ class ComprasController extends Controller
             ->rawColumns(['operaciones'])
             ->make(true);
         }
-        return view('control.paginas.compras', compact('totalFinal'));
+        return view('control.paginas.compras');
     }
 
-    
+
     public function recibo_pdf($productoId){
         //dd($user_id);
         $customPaper = array(0,0,325.00,394.00);
@@ -122,11 +126,30 @@ class ComprasController extends Controller
         //->setOption('margin-bottom', 10);
         return $pdf->stream();
     }
-    
+
+
+    public function recibo_pdf2()
+{
+    $customPaper = array(0, 0, 325.00, 394.00);
+
+    // Retrieve the data
+    $data = C_compras::where('usuario_id', auth()->user()->id)->get();
+    $totalFinal = $data->sum('total');
+    $data->sum_total = $totalFinal;
+
+    // Delete all records associated with the authenticated user
+    C_compras::where('usuario_id', auth()->user()->id)->delete();
+
+    // Create and stream the PDF
+    $pdf = PDF::loadView('control.paginas.recibo', compact('data'))
+        ->setPaper($customPaper);
+
+    return $pdf->stream();
+}
     public function obtener_compras(Request $request){
         $compras= C_compras::where('id', $request->numero)->first();
         $permitirmodificacion = 1;
-        if($compras->status == 'BAJA'){ 
+        if($compras->status == 'BAJA'){
             $permitirmodificacion = 0;
         }
         $data = array(

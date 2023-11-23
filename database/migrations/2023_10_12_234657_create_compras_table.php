@@ -19,8 +19,12 @@ class CreateComprasTable extends Migration
             $table->string('precio')->nullable();
             $table->string('cantidadcompra')->nullable();
             $table->string('total')->nullable();
+            $table->unsignedBigInteger('usuario_id')->nullable();
             $table->string('status',5)->nullable();
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+
+            
         });
     }
 
